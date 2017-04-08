@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="closeDialog"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="237" max="32767" attributes="0"/>
+                      <Component id="okButton" linkSize="1" min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cancelButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jtxtBankName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtBranchName" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jtxtChequeAmt" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                                  <Component id="jtxtChequeDate" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                                  <Component id="jtxtChequeNo" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="170" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jcbCash" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jlblSale" pref="168" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jbtnReset" min="-2" pref="60" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel11" min="-2" pref="143" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jlblSalePay" pref="215" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel12" min="-2" pref="143" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jlblRemainPay" pref="215" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jtxtCardAmt" min="-2" pref="126" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jtxtCashAmt" min="-2" pref="126" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jcbBank" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jcbCard" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="183" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jtxtCardNo" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlblSale" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnReset" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jcbCash" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtCashAmt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="jcbBank" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtBankName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtBranchName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtChequeNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtChequeDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtChequeAmt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jcbCard" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel7" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtCardAmt" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel8" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtCardNo" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlblSalePay" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlblRemainPay" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="okButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="okButton">
+      <Properties>
+        <Property name="mnemonic" type="int" value="79"/>
+        <Property name="text" type="java.lang.String" value="OK"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okButtonActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="okButtonKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="cancelButton">
+      <Properties>
+        <Property name="mnemonic" type="int" value="67"/>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jcbCash">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cash Information"/>
+      </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jcbCashItemStateChanged"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jcbCashKeyPressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cash Amount"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtCashAmt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCashAmtFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCashAmtFocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCashAmtKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCashAmtKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jcbBank">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Information"/>
+      </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jcbBankItemStateChanged"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jcbBankKeyPressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtBankName">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtBankNameFocusGained"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtBankNameKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtBankNameKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtBranchName">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtBranchNameFocusGained"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtBranchNameKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtBranchNameKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtChequeNo">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtChequeNoFocusGained"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtChequeNoKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtChequeNoKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtChequeDate">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtChequeDateFocusGained"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtChequeDateKeyPressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtChequeAmt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtChequeAmtFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtChequeAmtFocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtChequeAmtKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtChequeAmtKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cheque Amount"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cheque Date."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cheque No."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Branch"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jcbCard">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Credit Card Information"/>
+      </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jcbCardItemStateChanged"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jcbCardKeyPressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Card Amount"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtCardAmt">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCardAmtFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCardAmtFocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCardAmtKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCardAmtKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Sale Amount"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblSale">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.00"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnReset">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reset"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnResetActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Sale Pay"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblSalePay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.00"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel12">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Remain Pay Amount"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblRemainPay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.00"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Card Number"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtCardNo">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCardNoFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCardNoFocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCardNoKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCardNoKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>

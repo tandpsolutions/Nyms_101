@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnNew" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnEdit" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnSave" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnDelete" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnClose" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnPrint" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnFirst" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnPrevious" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnNext" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnLast" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jbtnView" pref="72" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Component id="jlblMsg" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="jlblMsg" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbtnNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnClose" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnPrint" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnFirst" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="jbtnPrevious" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="jbtnNext" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="jbtnLast" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="jbtnView" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="jbtnNew">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="New"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnNewActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnNewKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnEdit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Edit"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnEditActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnEditKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnDelete">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnDeleteActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnDeleteKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnClose">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="f0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Close"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnCloseActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnCloseKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnSave">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Save"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSaveActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnSaveKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnFirst">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="|&lt;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnFirstActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnFirstKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnPrevious">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnPreviousActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnPreviousKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnNext">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnNextActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnNextKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnLast">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&gt;|"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnLastActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnLastKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnView">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="View"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnViewActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnViewKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnPrint">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Print"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnPrintActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtnPrintKeyPressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblMsg">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[33, 25]"/>
+        </Property>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

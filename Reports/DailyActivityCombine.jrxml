@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DailyOPDBillDetail" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="64007b81-9d31-49e4-b9ba-a63cf6b45c46">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="dir" class="java.lang.String"/>
+	<parameter name="opb_bill" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="vaccine" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="patho" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="advance" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="refund" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="discharge" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="44" uuid="b2f9afbe-3469-4e07-b562-ba4ca0005405"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daily Activity Combine]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="52">
+			<subreport>
+				<reportElement x="-25" y="0" width="802" height="52" uuid="cf2df7fb-2cc4-4852-8ae1-0e85bf5312be"/>
+				<subreportParameter name="dir">
+					<subreportParameterExpression><![CDATA[$P{dir}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="refund">
+					<subreportParameterExpression><![CDATA[$P{refund}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="patho">
+					<subreportParameterExpression><![CDATA[$P{patho}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="discharge">
+					<subreportParameterExpression><![CDATA[$P{discharge}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="advance">
+					<subreportParameterExpression><![CDATA[$P{advance}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="vaccine">
+					<subreportParameterExpression><![CDATA[$P{vaccine}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{opb_bill}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{dir}+"//Reports//DailyOPDBillDetailCombine.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDAppoinmentBook" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="59edc6bb-9e19-40b7-bc05-f27b0f86ba2d">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="pt_name" class="java.lang.String">
+		<fieldDescription><![CDATA[pt_name]]></fieldDescription>
+	</field>
+	<field name="ref_no" class="java.lang.String">
+		<fieldDescription><![CDATA[ref_no]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="user_name" class="java.lang.String">
+		<fieldDescription><![CDATA[user_name]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[amount]]></fieldDescription>
+	</field>
+	<field name="cash" class="java.lang.Double">
+		<fieldDescription><![CDATA[cash]]></fieldDescription>
+	</field>
+	<field name="card" class="java.lang.Double">
+		<fieldDescription><![CDATA[card]]></fieldDescription>
+	</field>
+	<field name="bank" class="java.lang.Double">
+		<fieldDescription><![CDATA[bank]]></fieldDescription>
+	</field>
+	<field name="dept" class="java.lang.String">
+		<fieldDescription><![CDATA[dept]]></fieldDescription>
+	</field>
+	<variable name="amount_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="cash_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{cash}]]></variableExpression>
+	</variable>
+	<variable name="bank_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{bank}]]></variableExpression>
+	</variable>
+	<variable name="bank_2" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{card}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="204" height="20" uuid="fb30333a-9b4d-46ae-a39b-07084e8e6073"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<text><![CDATA[Daily Cash Register :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="0" width="100" height="20" uuid="70a0c0bb-406f-4fd4-ba56-67e299d03256"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fromDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="e40521e0-49eb-4ada-8242-f7b8f74ef632"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{toDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="213" y="0" width="69" height="20" uuid="129fc2c5-03e6-477d-a5ec-6b641acea816"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[From Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="0" width="73" height="20" uuid="41eab5df-28e0-43b6-890f-8a3147b0fa59"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To Date]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="337" y="0" width="60" height="20" uuid="d52cae2d-726d-4ded-a6a3-cc73a77d73cc"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="0" width="120" height="20" uuid="29d19298-1db8-41f1-8841-022b2b2bdf37"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="0" width="60" height="20" uuid="7ee25db1-306d-4a86-b907-47e4216927c5"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Card]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="21" height="20" uuid="cc7338f3-9a0c-46dc-888c-902f10c01aa8"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sr.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="0" width="48" height="20" uuid="81f5007a-d59c-4cf1-9e60-efb8376d8929"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bank]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="84" height="20" uuid="782733c4-75a7-43eb-bf8f-af62469db3b0"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="0" width="55" height="20" uuid="d29c3dfe-35da-4e01-8409-233eab6da9e3"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="0" width="50" height="20" uuid="896457bc-3b9b-4373-bef0-1955671400e7"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="0" width="57" height="20" uuid="c9e466dc-9fdc-4d07-a8a9-f67d70b2a2d7"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dept]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement stretchType="RelativeToTallestObject" x="337" y="0" width="60" height="20" uuid="6f3e7d3a-0d54-426c-b4ca-ba537bffa71c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cash}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="21" y="0" width="120" height="20" uuid="f0722b42-15ad-4ff0-9423-d6d5a5585649"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00">
+				<reportElement stretchType="RelativeToTallestObject" x="445" y="0" width="60" height="20" uuid="d54d829c-c3d5-401f-8f2a-002f5c730d35"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{card}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="21" height="20" uuid="5efdf0e4-f8be-4544-8b4e-6e00a060d997"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement stretchType="RelativeToTallestObject" x="397" y="0" width="48" height="20" uuid="81d0eb1c-1418-45d0-930a-2b20186ae6bf"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bank}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement stretchType="RelativeToTallestObject" x="141" y="0" width="84" height="20" uuid="543c9cbb-9b7e-426c-b159-63d07e653740"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ref_no}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement stretchType="RelativeToTallestObject" x="285" y="0" width="52" height="20" uuid="61fc9e09-2552-4728-b00e-e78a34b0d611"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="505" y="0" width="50" height="20" uuid="27037a13-3ea9-4738-b250-d3f55f374153"/>
+				<box leftPadding="4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement stretchType="RelativeToTallestObject" x="225" y="0" width="60" height="20" uuid="3825750a-4cd3-4214-a5c8-04e443dc5eb4"/>
+				<box leftPadding="4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dept}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40">
+			<textField>
+				<reportElement x="193" y="20" width="80" height="20" uuid="321a3a38-3828-4e8d-afcf-ccd7f8f32aa9"/>
+				<textElement textAlignment="Right">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="273" y="20" width="40" height="20" uuid="6474df4e-b0d8-4684-946f-9c94a585af97"/>
+				<textElement>
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="285" y="0" width="52" height="20" uuid="dd9a3f75-83aa-40b4-98a6-627942872fc6"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{amount_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="337" y="0" width="58" height="20" uuid="7b82658a-7e85-44c7-93f1-dc56d748dc1a"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{cash_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="395" y="0" width="50" height="20" uuid="620b2427-1ef7-4f7b-a09c-302796c288aa"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{bank_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="445" y="0" width="60" height="20" uuid="29a89f17-034b-44b7-9707-9bf930491ab7"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{bank_2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

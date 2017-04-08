@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DailyOPDBillDetail" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="64007b81-9d31-49e4-b9ba-a63cf6b45c46">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="dir" class="java.lang.String"/>
+	<parameter name="advance" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="refund" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="discharge" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="sr_no" class="java.lang.String">
+		<fieldDescription><![CDATA[sr_no]]></fieldDescription>
+	</field>
+	<field name="ref_no" class="java.lang.String">
+		<fieldDescription><![CDATA[ref_no]]></fieldDescription>
+	</field>
+	<field name="v_date" class="java.lang.String">
+		<fieldDescription><![CDATA[v_date]]></fieldDescription>
+	</field>
+	<field name="pt_name" class="java.lang.String">
+		<fieldDescription><![CDATA[pt_name]]></fieldDescription>
+	</field>
+	<field name="particular" class="java.lang.String">
+		<fieldDescription><![CDATA[particular]]></fieldDescription>
+	</field>
+	<field name="tot_amt" class="java.lang.String">
+		<fieldDescription><![CDATA[tot_amt]]></fieldDescription>
+	</field>
+	<field name="ac_name" class="java.lang.String">
+		<fieldDescription><![CDATA[ac_name]]></fieldDescription>
+	</field>
+	<field name="user" class="java.lang.String">
+		<fieldDescription><![CDATA[user]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="44" uuid="b2f9afbe-3469-4e07-b562-ba4ca0005405"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detail OPD Bill Detail]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="30" height="20" uuid="c4132865-8fc6-4a93-9d20-6d8c39d930b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SR.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="0" width="88" height="20" uuid="2ebe1217-6bec-43c8-9bab-72b1c54d5141"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="0" width="64" height="20" uuid="816b673a-8ff3-466a-8bcd-6942bc4fa913"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="0" width="188" height="20" uuid="b75a710a-0ed1-450b-8f95-579282828e11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="153" height="20" uuid="5e6fc2a5-20aa-4d44-9de7-a780ce487493"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Particular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="0" width="79" height="20" uuid="d20390cb-5a5b-496c-a318-dbc43d3c5279"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="602" y="0" width="127" height="20" uuid="90a7ad70-7961-4a9e-b345-744973fb4561"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="729" y="0" width="73" height="20" uuid="aebe7af6-3c52-45a0-bff7-19ad714f8d37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="30" height="20" uuid="d4c80b89-7838-4229-8336-081046163bc2"/>
+				<textFieldExpression><![CDATA[$F{sr_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="88" height="20" uuid="9e1573d2-611a-412a-a44c-d64273a0b0d9"/>
+				<textFieldExpression><![CDATA[$F{ref_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="0" width="64" height="20" uuid="d281da06-d868-472c-94d1-6d6e51fc5d0c"/>
+				<textFieldExpression><![CDATA[$F{v_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="0" width="188" height="20" uuid="802d85be-3a35-4690-abf6-5a9d76329b18"/>
+				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="153" height="20" uuid="3e8e8059-7655-48e3-8d47-1f330514fe74"/>
+				<textFieldExpression><![CDATA[$F{particular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="523" y="0" width="79" height="20" uuid="c035e331-6676-46e0-8fb0-73345951eae6"/>
+				<textFieldExpression><![CDATA[$F{tot_amt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="0" width="127" height="20" uuid="75900557-10f2-4948-8289-7cdf8a31ccbb"/>
+				<textFieldExpression><![CDATA[$F{ac_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="729" y="0" width="73" height="20" uuid="6e4bf1e5-80df-4f9f-820f-620307cb13b8"/>
+				<textFieldExpression><![CDATA[$F{user}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="52">
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="52" uuid="79d9482d-e7b4-4dc1-8c29-a8cd541dbfd0"/>
+				<subreportParameter name="dir">
+					<subreportParameterExpression><![CDATA[$P{dir}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="refund">
+					<subreportParameterExpression><![CDATA[$P{refund}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="discharge">
+					<subreportParameterExpression><![CDATA[$P{discharge}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{advance}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{dir}+"//Reports//DailyAdvanceDetailCombine.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

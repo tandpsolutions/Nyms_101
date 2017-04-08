@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDBill" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="b27a7218-63dc-4c48-9c4e-9ee498e35dba">
+	<property name="ireport.zoom" value="1.4641000000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="data" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="dir" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT o.ref_no,o.v_date,o.opd_no,p.pt_name,
+CASE WHEN p.sex = 0 THEN 'Male' ELSE 'Female' END AS sex  ,
+DATEDIFF(CURDATE(),dob) / 365 AS age,ac_name,b.bill_item_name,o.pur_qty,o.batch_no,o.exp_date,s.site_name,
+b1.BRANCH_NAME, b1.CMPN_NAME,b1.ADDRESS1,b1.ADDRESS2,b1.ADDRESS3,b1.MOBILE,b1.EMAIL,b1.TIN_NO
+FROM stkdsp o LEFT JOIN acntmst a ON o.doc_cd=a.ac_cd
+LEFT JOIN patientmst p ON o.opd_no=p.opd_no
+LEFT JOIN sitemst s ON o.site_cd=s.site_cd
+LEFT JOIN billitemmst b ON o.bill_item_cd=b.bill_item_cd LEFT JOIN branchmst b1 ON b1.BRANCH_CD =1
+WHERE o.ref_no='SD00001']]>
+	</queryString>
+	<field name="ref_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="v_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="opd_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pt_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sex" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.Integer"/>
+	<field name="ac_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bill_item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pur_qty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="batch_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="exp_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="site_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BRANCH_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CMPN_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ADDRESS3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MOBILE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EMAIL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TIN_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="99" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="24" width="555" height="35" uuid="95d016b5-bc25-4bac-8313-acebabb4de47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="24" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BRANCH_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="59" width="555" height="20" uuid="65787d7e-64cf-4fef-89ae-c881a3887c67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS1}+","+$F{ADDRESS2}+","+$F{ADDRESS3}+" / P :"+$F{MOBILE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="79" width="555" height="20" uuid="0ba23fa4-d53f-4883-a37a-1d8a9cf1c1ef"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["email id : "+$F{EMAIL}+" / CIN :"+$F{TIN_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="555" height="24" uuid="7b018f08-edb7-468b-92b2-44c9599a7407"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CMPN_NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="137" height="15" uuid="c733dbe9-9221-48d2-aade-30f9cecd77f0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prescription No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="152" y="0" width="100" height="15" uuid="f6e9a9ee-6ceb-40ca-8e2b-f2f41fe42fbd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ref_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="137" y="0" width="15" height="15" uuid="71ee8fe9-cf59-4790-ad0d-57a8620e5848"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="438" y="0" width="117" height="15" uuid="d457b258-756d-4fbb-9d75-31b1a9199702"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{v_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="433" y="0" width="5" height="15" uuid="157ebf87-0056-4cd6-b99e-696d834e6554"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="63" height="15" uuid="9ff8e1b7-fda1-4d6f-a212-29b46b004606"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="15" width="137" height="15" uuid="021b319e-dc3c-412b-84c4-1117464bb816"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="152" y="15" width="403" height="15" uuid="11571674-d564-40f0-8b35-e61a35e3f825"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="137" y="15" width="15" height="15" uuid="4d6ef651-c09d-4d71-b86a-367e904904b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="30" width="63" height="15" uuid="7a4c8fe9-c91a-46bb-91d7-de74c829f530"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OPD CASE NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="30" width="5" height="15" uuid="cec08db4-567d-40f8-a3e7-5413cfb1ba10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="438" y="30" width="117" height="15" uuid="e90df3c7-3a1b-4b3d-8e2f-b1f4be2d03e6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{opd_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="137" height="15" uuid="9f127a71-4f16-49b2-93ea-c3e6d9d69a6e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sex/Age]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="152" y="30" width="100" height="15" uuid="27b3a550-efa7-4e9b-bce8-715e23db382d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sex}+"/"+$F{age}+" Years"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="137" y="30" width="15" height="15" uuid="753bff19-de49-454c-9baf-46b7a5ffd39d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="138" height="15" uuid="e5d58f09-9244-414e-8e73-9dd5a921142c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="45" width="15" height="15" uuid="cc4bab7b-8b10-4555-98a6-b369098c01f6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="152" y="45" width="403" height="15" uuid="ad29b578-832b-4412-8629-494fe7800071"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ac_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="152" height="20" uuid="723d6984-7bd6-4abe-a1fd-f7465d0e9633"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Particular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="0" width="114" height="20" uuid="8a331837-5e69-4760-8ee9-392b20304b63"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Batch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="114" height="20" uuid="84b9d9b7-4139-4b6b-8d89-b6645eec4811"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Exp Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="175" height="20" uuid="2c2cd148-d9ca-4896-a47f-8028fc7ab92c"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Site]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="152" height="20" uuid="f8bd5bec-a7b8-40c5-9a94-f5bd7be1329e"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bill_item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="114" height="20" uuid="74c908a4-0a25-4fe6-828f-56d79309c8d3"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{batch_no}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="266" y="0" width="114" height="20" uuid="657794a0-6339-41eb-9a92-4db16fb632c0"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{exp_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="380" y="0" width="175" height="20" uuid="f8c6f5b5-4138-4cfe-b80e-60c7c0c0064c"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{site_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="47">
+			<subreport>
+				<reportElement x="0" y="0" width="529" height="47" uuid="f42ee4d6-30c8-4a9f-954e-1d04dd8d8496"/>
+				<subreportParameter name="CMPN_NAME">
+					<subreportParameterExpression><![CDATA[$F{CMPN_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{data}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{dir}+"\\Reports\\vac_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

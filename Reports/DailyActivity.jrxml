@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DailyActivity" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="feb9f300-ffa2-4b76-a37b-980cd2632580">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<field name="particular" class="java.lang.String">
+		<fieldDescription><![CDATA[particular]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[amount]]></fieldDescription>
+	</field>
+	<field name="cash" class="java.lang.String">
+		<fieldDescription><![CDATA[cash]]></fieldDescription>
+	</field>
+	<field name="bank" class="java.lang.String">
+		<fieldDescription><![CDATA[bank]]></fieldDescription>
+	</field>
+	<field name="card" class="java.lang.String">
+		<fieldDescription><![CDATA[card]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="34" uuid="ca3854c7-25a1-48fb-a091-0cc493f01c40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daily Activity]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="83" y="0" width="100" height="20" uuid="302d9e94-41d0-42ce-a776-b91e9879589c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{fromDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="100" height="20" uuid="4bbf6ebd-633f-408b-8814-bad67330c1ae"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{toDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="83" height="20" uuid="1ef830dd-6b12-4ebc-9d6d-11e55d7c5d0e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[From Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="0" width="83" height="20" uuid="9fb7e55f-92d7-4b16-97e0-c24014c6763c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[To Date :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="300" height="20" uuid="627996d9-af90-4486-9588-dce2550a1820"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Particular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="65" height="20" uuid="07e7c9f0-882a-4174-bdf3-be75d144f8bf"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="0" width="65" height="20" uuid="7e6663bc-370c-4a1f-a63f-1cf3dcbba2ca"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="60" height="20" uuid="0369e699-fc07-4005-a52a-88785fc4ab21"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bank]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="0" width="65" height="20" uuid="fbd06158-39de-483a-a35f-c1b573db35b3"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Card]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="300" height="20" uuid="fbdb2dfb-3f30-4a6e-a921-03448ac71379"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{particular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="65" height="20" uuid="530cfb21-4035-4a7f-9931-bda755595bae"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="65" height="20" uuid="049a7eb9-cbd3-4f47-9625-480e54a4bd86"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cash}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="60" height="20" uuid="ec62baae-dbbf-4c96-b000-4120b4e9ffc0"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{bank}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="65" height="20" uuid="78c52749-34fe-4063-899b-fae9c09d7e82"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{card}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel1" max="32767" attributes="0"/>
+                  <Component id="jPanel2" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" pref="282" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jchkRefBy" linkSize="7" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="jchkCity" linkSize="7" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="jchkDate" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" linkSize="7" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jtxtFromDate" min="-2" pref="84" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jBillDateBtn" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jtxtToDate" min="-2" pref="84" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jBillDateBtn1" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jtxtOPDNumber" max="32767" attributes="0"/>
+                      <Component id="jtxtCity" max="32767" attributes="0"/>
+                      <Component id="jtxtRefBy" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <Component id="jtxtRefAlias" min="-2" pref="52" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jLabel2" pref="95" max="32767" attributes="0"/>
+                      <Component id="jchkName" max="32767" attributes="0"/>
+                      <Component id="jchkArea" max="32767" attributes="0"/>
+                      <Component id="jchkConsulatant" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jtxtName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jtxtArea" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jtxtConsBy" alignment="0" pref="221" max="32767" attributes="0"/>
+                      <Component id="jtxtContact" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jtxtConsAlias" min="-2" pref="52" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jbtnSearch" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
+                              <Component id="jbtnClose" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" linkSize="1" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="jtxtOPDNumber" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" linkSize="2" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="jtxtContact" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jchkDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtFromDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBillDateBtn" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jtxtToDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBillDateBtn1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jchkName" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="jtxtName" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnClose" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jchkCity" linkSize="5" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtCity" linkSize="5" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jchkArea" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtArea" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jchkRefBy" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtRefBy" linkSize="6" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jchkConsulatant" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtRefAlias" linkSize="6" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="jtxtConsBy" linkSize="6" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="jtxtConsAlias" linkSize="6" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="OPD Number"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtOPDNumber">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtOPDNumberKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtContact">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtContactKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Contact NUmber"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jchkDate">
+          <Properties>
+            <Property name="mnemonic" type="int" value="68"/>
+            <Property name="text" type="java.lang.String" value="Visit Date"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jchkDateItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtFromDate">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtFromDateFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtFromDateFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtFromDateKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBillDateBtn">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBillDateBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtToDate">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtToDateFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtToDateFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtToDateKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBillDateBtn1">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBillDateBtn1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jchkArea">
+          <Properties>
+            <Property name="mnemonic" type="int" value="65"/>
+            <Property name="text" type="java.lang.String" value="Area"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jchkAreaItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtArea">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAreaFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAreaFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAreaKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAreaKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jchkCity">
+          <Properties>
+            <Property name="mnemonic" type="int" value="67"/>
+            <Property name="text" type="java.lang.String" value="City"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jchkCityItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtCity">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCityFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCityFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCityKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCityKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtRefBy">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtRefByFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtRefByFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtRefByKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtRefByKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtConsBy">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtConsByFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtConsByFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtConsByKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtConsByKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtConsAlias">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtRefAlias">
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jchkRefBy">
+          <Properties>
+            <Property name="mnemonic" type="int" value="82"/>
+            <Property name="text" type="java.lang.String" value="Ref By"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jchkRefByItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jchkConsulatant">
+          <Properties>
+            <Property name="mnemonic" type="int" value="84"/>
+            <Property name="text" type="java.lang.String" value="Consoltant"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jchkConsulatantItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jchkName">
+          <Properties>
+            <Property name="mnemonic" type="int" value="78"/>
+            <Property name="text" type="java.lang.String" value="By Name"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jchkNameItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtName">
+        </Component>
+        <Component class="javax.swing.JButton" name="jbtnSearch">
+          <Properties>
+            <Property name="mnemonic" type="int" value="83"/>
+            <Property name="text" type="java.lang.String" value="Search"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSearchActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jbtnClose">
+          <Properties>
+            <Property name="mnemonic" type="int" value="67"/>
+            <Property name="text" type="java.lang.String" value="Close"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnCloseActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <Properties>
+            <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="Center"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="4" rowCount="0">
+                    <Column editable="false" title="Patient Name" type="java.lang.Object"/>
+                    <Column editable="false" title="Case No" type="java.lang.Object"/>
+                    <Column editable="false" title="Contact" type="java.lang.Object"/>
+                    <Column editable="false" title="Address" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DailyActivity" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="feb9f300-ffa2-4b76-a37b-980cd2632580">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<parameter name="totAmt" class="java.lang.String"/>
+	<parameter name="totCash" class="java.lang.String"/>
+	<parameter name="totBank" class="java.lang.String"/>
+	<parameter name="totCard" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT CASE WHEN o.ref_no IS NULL THEN '' ELSE o.ref_no END AS ref_no,o.v_date,p1.pt_name,p.cash_amt,  p.bank_amt,p.card_amt,o.net_amt FROM opdbillhd o LEFT JOIN payment p ON o.ref_no=p.ref_no  LEFT JOIN patientmst p1 ON o.opd_no=p1.opd_no   WHERE o.v_date >='2015-06-24' and   o.v_date  <='2015-06-24' and o.ref_no is not null  and o.user_id in (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)]]>
+	</queryString>
+	<field name="ref_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="v_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pt_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cash_amt" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bank_amt" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="card_amt" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="net_amt" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="tot_net" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{net_amt}]]></variableExpression>
+	</variable>
+	<variable name="tot_cash" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{cash_amt}]]></variableExpression>
+	</variable>
+	<variable name="tot_bank" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{bank_amt}]]></variableExpression>
+	</variable>
+	<variable name="tot_card" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{card_amt}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="34" uuid="ca3854c7-25a1-48fb-a091-0cc493f01c40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OPD Collection Detail]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="155" y="0" width="145" height="20" uuid="627996d9-af90-4486-9588-dce2550a1820"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Particular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="65" height="20" uuid="07e7c9f0-882a-4174-bdf3-be75d144f8bf"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="0" width="65" height="20" uuid="7e6663bc-370c-4a1f-a63f-1cf3dcbba2ca"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="60" height="20" uuid="0369e699-fc07-4005-a52a-88785fc4ab21"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bank]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="0" width="65" height="20" uuid="fbd06158-39de-483a-a35f-c1b573db35b3"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Card]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="31" height="20" uuid="a4196037-6869-4cc7-a17d-70d23e2024fc"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SR.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="0" width="66" height="20" uuid="51919a9c-d9b3-4dc5-8d3a-d4bc6092d1c8"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="0" width="58" height="20" uuid="95da94ca-8d84-49e3-b46e-194207871d07"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="155" y="0" width="145" height="20" uuid="fbdb2dfb-3f30-4a6e-a921-03448ac71379"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="65" height="20" uuid="530cfb21-4035-4a7f-9931-bda755595bae"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{net_amt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="65" height="20" uuid="049a7eb9-cbd3-4f47-9625-480e54a4bd86"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cash_amt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="60" height="20" uuid="ec62baae-dbbf-4c96-b000-4120b4e9ffc0"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{bank_amt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="65" height="20" uuid="78c52749-34fe-4063-899b-fae9c09d7e82"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{card_amt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="31" height="20" uuid="14931e30-1f76-4cd9-baa2-b0402b15ae2f"/>
+				<box leftPadding="2">
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="0" width="66" height="20" uuid="251f8021-7930-42e3-b0e9-2624f5675394"/>
+				<box leftPadding="2">
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ref_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="0" width="58" height="20" uuid="a206a551-5908-4583-b8a8-1cd2fd3b03ad"/>
+				<box leftPadding="2">
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{v_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20">
+			<textField>
+				<reportElement x="300" y="0" width="65" height="20" uuid="c8ab0368-afec-4188-a312-1324fe33f64d"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{tot_net}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="0" width="65" height="20" uuid="ec83b800-c0a5-4783-8907-e444359fa073"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{tot_cash}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="60" height="20" uuid="3174bb69-9a8b-4582-a323-a44cbf9da9a1"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{tot_bank}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="65" height="20" uuid="b0885ae8-d0f2-4b93-bf60-a7e0df4780bf"/>
+				<box rightPadding="2">
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{tot_card}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

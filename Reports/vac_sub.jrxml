@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDBill" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="b27a7218-63dc-4c48-9c4e-9ee498e35dba">
+	<property name="ireport.zoom" value="1.4641000000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="data" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="dir" class="java.lang.String"/>
+	<parameter name="CMPN_NAME" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT o.ref_no,o.v_date,o.opd_no,p.pt_name,
+CASE WHEN p.sex = 0 THEN 'Male' ELSE 'Female' END AS sex  ,
+DATEDIFF(CURDATE(),dob) / 365 AS age,ac_name,b.bill_item_name,o.pur_qty,o.batch_no,o.exp_date,s.site_name,
+b1.BRANCH_NAME, b1.CMPN_NAME,b1.ADDRESS1,b1.ADDRESS2,b1.ADDRESS3,b1.MOBILE,b1.EMAIL,b1.TIN_NO
+FROM stkdsp o LEFT JOIN acntmst a ON o.doc_cd=a.ac_cd
+LEFT JOIN patientmst p ON o.opd_no=p.opd_no
+LEFT JOIN sitemst s ON o.site_cd=s.site_cd
+LEFT JOIN billitemmst b ON o.bill_item_cd=b.bill_item_cd LEFT JOIN branchmst b1 ON b1.BRANCH_CD =1
+WHERE o.ref_no='SD00001']]>
+	</queryString>
+	<field name="bill_item_name" class="java.lang.String"/>
+	<field name="next_due_date" class="java.sql.Date"/>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="21" width="117" height="15" uuid="d457b258-756d-4fbb-9d75-31b1a9199702"/>
+				<box>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{next_due_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="6" width="117" height="15" uuid="9ff8e1b7-fda1-4d6f-a212-29b46b004606"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Next Due Date]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="338" height="20" uuid="723d6984-7bd6-4abe-a1fd-f7465d0e9633"/>
+				<box leftPadding="5">
+					<pen lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Next Dose]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="338" height="20" uuid="f8bd5bec-a7b8-40c5-9a94-f5bd7be1329e"/>
+				<box leftPadding="5">
+					<pen lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bill_item_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="86">
+			<textField>
+				<reportElement x="288" y="30" width="267" height="13" uuid="2fa9fc5a-9bc4-41a8-be40-07eb237ed98a"/>
+				<box topPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["For, "+$P{CMPN_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="393" y="72" width="162" height="14" uuid="5babece4-9f92-4d60-995b-a0a9ced2ab1c"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<text><![CDATA[AUTHORISED SIGNATORY]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

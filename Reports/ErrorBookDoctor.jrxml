@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDAppoinmentBook" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59edc6bb-9e19-40b7-bc05-f27b0f86ba2d">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<parameter name="doctor" class="java.lang.String"/>
+	<parameter name="caseType" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[ SELECT a.ac_cd,a.ac_name,a1.add1,a1.add2,a1.add3,c.city_name,l.user_name, CASE WHEN s.spec_sub_name IS NULL THEN '' ELSE s.spec_sub_name END AS spec_sub_name,  p.mobile1 FROM acntmst a LEFT JOIN adbkmst a1  ON a.ac_cd = a1.ac_cd LEFT JOIN phbkmst p ON a.ac_cd=p.ac_cd LEFT JOIN doctormaster d ON a.ac_cd=d.ac_cd LEFT JOIN login l ON a.user_id = l.user_id left join citymst c on a1.city_cd=c.city_cd left join specsubmst s on  d.sub_spec_cd = s.spec_sub_cd  WHERE p.mobile1 ='' OR a1.city_cd = 0 OR d.sub_spec_cd IS NULL OR d.sub_spec_cd = 0]]>
+	</queryString>
+	<field name="ac_cd" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ac_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="add1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="add2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="add3" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="city_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="user_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="spec_sub_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobile1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="0" width="182" height="20" uuid="29d19298-1db8-41f1-8841-022b2b2bdf37"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="0" width="133" height="20" uuid="7ee25db1-306d-4a86-b907-47e4216927c5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="0" width="96" height="20" uuid="e6916032-21f6-4058-9bc2-42df4662fdde"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="0" width="68" height="20" uuid="70e9d454-2d10-48d4-bacc-5ed5f7faf43c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="0" width="55" height="20" uuid="6ef0ccd5-e635-4444-b0f8-133995b3f00b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="21" height="20" uuid="cc7338f3-9a0c-46dc-888c-902f10c01aa8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sr.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="h.mm a">
+				<reportElement stretchType="RelativeToTallestObject" x="500" y="0" width="55" height="20" uuid="ef3a603b-7c41-4e1d-8823-c1d4c85ed9fb"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mobile1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="21" y="0" width="182" height="20" uuid="f0722b42-15ad-4ff0-9423-d6d5a5585649"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ac_name}+" ("+$F{spec_sub_name}+")"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="203" y="0" width="133" height="20" uuid="d54d829c-c3d5-401f-8f2a-002f5c730d35"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{add1}+","+$F{add2}+","+$F{add3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="336" y="0" width="96" height="20" uuid="95b5f426-4836-4246-a409-3cd5a182511e"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="432" y="0" width="68" height="20" uuid="db5e746a-e910-4e73-a225-067a4829d435"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="21" height="20" uuid="5efdf0e4-f8be-4544-8b4e-6e00a060d997"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20">
+			<textField>
+				<reportElement x="202" y="0" width="80" height="20" uuid="321a3a38-3828-4e8d-afcf-ccd7f8f32aa9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="282" y="0" width="40" height="20" uuid="6474df4e-b0d8-4684-946f-9c94a585af97"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

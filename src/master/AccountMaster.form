@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jpanelNavigation" max="32767" attributes="0"/>
+                  <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jpanelNavigation" min="-2" pref="80" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" linkSize="11" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                      <Component id="jLabel2" linkSize="11" min="-2" pref="74" max="-2" attributes="0"/>
+                      <Component id="jLabel3" linkSize="11" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtxtAcAlias" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="jtxtGroupName" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" pref="90" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jtxtSpeciality" min="-2" pref="242" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jlblDr" min="-2" pref="32" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jtxtACName" min="-2" pref="582" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel16" min="-2" pref="84" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jcmbStar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jtxtAcAlias" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" linkSize="1" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" linkSize="2" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="jlblDr" linkSize="2" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jtxtACName" linkSize="2" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel16" linkSize="4" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jcmbStar" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtSpeciality" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel3" linkSize="4" alignment="0" pref="22" max="32767" attributes="0"/>
+                      <Component id="jtxtGroupName" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel7" linkSize="4" alignment="0" pref="22" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alias"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtAcAlias">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtACName">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtACNameFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtACNameFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtACNameKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtACNameKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Group Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtGroupName">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtGroupNameFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtGroupNameFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtGroupNameKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtGroupNameKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblDr">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Speciality"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtSpeciality">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtSpecialityFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtSpecialityFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtSpecialityKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtSpecialityKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Star Doctor"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jcmbStar">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="No"/>
+                <StringItem index="1" value="Yes"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jcmbStarKeyPressed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel8" min="-2" pref="74" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jtxtAddress3" pref="353" max="32767" attributes="0"/>
+                      <Component id="jtxtAddress2" alignment="0" pref="353" max="32767" attributes="0"/>
+                      <Component id="jtxtAddress1" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel4" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jtxtCity" min="-2" pref="304" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel5" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jtxtArea" min="-2" pref="304" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel6" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jtxtPincode" min="-2" pref="304" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel8" linkSize="5" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="jtxtAddress1" linkSize="5" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jtxtAddress2" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jtxtAddress3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel4" linkSize="6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtxtCity" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtxtArea" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jtxtPincode" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Address"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtAddress1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAddress1FocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAddress1FocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAddress1KeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="City"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtAddress3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAddress3FocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAddress3FocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAddress3KeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtCity">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCityFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtCityFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCityKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCityKeyReleased"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Area"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtArea">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAreaFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAreaFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAreaKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAreaKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pincode"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtPincode">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtPincodeFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtPincodeFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtPincodeKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtPincodeKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtAddress2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAddress2FocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAddress2FocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAddress2KeyPressed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel12" pref="77" max="32767" attributes="0"/>
+                          <Component id="jLabel13" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jtxtLandline" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
+                      <Component id="jtxtFax" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
+                      <Component id="jtxtEmail" alignment="0" min="-2" pref="356" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jLabel27" max="32767" attributes="0"/>
+                      <Component id="jLabel14" max="32767" attributes="0"/>
+                      <Component id="jLabel26" min="-2" pref="87" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jtxtMobile" max="32767" attributes="0"/>
+                      <Component id="jtxtMobile2" max="32767" attributes="0"/>
+                      <Component id="jtxtEmail2" min="-2" pref="302" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel12" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtLandline" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel14" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtMobile" linkSize="7" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel13" linkSize="8" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtFax" linkSize="8" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel27" linkSize="8" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtMobile2" linkSize="8" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel15" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtEmail" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel26" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtEmail2" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="47" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Landline #"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtLandline">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtLandlineFocusGained"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtLandlineKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtLandlineKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fax #"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtFax">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtFaxFocusGained"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtFaxKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtFaxKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mobile (1)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtMobile">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtMobileFocusGained"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtMobileKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtMobileKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel27">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mobile (2)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtMobile2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtMobile2FocusGained"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtMobile2KeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtMobile2KeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Email (1)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtEmail">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtEmailFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtEmailFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtEmailKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel26">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Email (2)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtEmail2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="12" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtEmail2FocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtEmail2FocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtEmail2KeyPressed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel4">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel31" min="-2" pref="95" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jtxtOPB" min="-2" pref="115" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jcmbEffect" min="-2" pref="94" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel31" linkSize="10" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jtxtOPB" linkSize="10" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jcmbEffect" linkSize="10" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jLabel32" linkSize="10" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel31">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Openin Cash"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel32">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Effect"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtOPB">
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtOPBFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtOPBFocusLost"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtOPBKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtOPBKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jcmbEffect">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="DR"/>
+                <StringItem index="1" value="CR"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jcmbEffectKeyPressed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jpanelNavigation">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel5">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jLabel9" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLabel10" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLabel11" alignment="1" min="-2" pref="89" max="-2" attributes="1"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlblUserName" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                      <Component id="jlblEditNo" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jlblLstUpdate" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlblUserName" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlblEditNo" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlblLstUpdate" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="User:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Edit No:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Last Updated:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblLstUpdate">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblEditNo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblUserName">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

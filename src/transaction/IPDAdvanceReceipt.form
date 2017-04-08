@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel1" max="32767" attributes="0"/>
+                  <Component id="jPanelNavigation" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel14" linkSize="3" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                  <Component id="jLabel12" linkSize="3" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" linkSize="3" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" linkSize="3" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel7" min="-2" pref="72" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jtxtVdate" min="-2" pref="139" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jlblRemPayment" linkSize="2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jtxtAmount" linkSize="2" alignment="0" pref="215" max="32767" attributes="0"/>
+                                  <Component id="jlblTotalPayment" linkSize="2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jlblTotalBill" linkSize="2" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jPanel2" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel2" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel7" min="-2" pref="20" max="-2" attributes="1"/>
+                          <Component id="jtxtVdate" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel10" linkSize="1" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jlblTotalBill" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel13" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jlblTotalPayment" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel12" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jtxtAmount" linkSize="1" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlblRemPayment" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jLabel14" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <Component id="jPanelNavigation" min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel5" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlblCity" alignment="0" min="-2" pref="292" max="-2" attributes="0"/>
+                      <Component id="jlblName" alignment="0" min="-2" pref="292" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jtxtRefNo" min="-2" pref="127" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jbtnOldVoucher" pref="161" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel4" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="jLabel8" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlblArea" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="jlblSex" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="jlblIPDNumber" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel9" linkSize="4" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                      <Component id="jLabel6" linkSize="4" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlblOPDNUmber" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="jlblRefBy" alignment="0" pref="206" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="jtxtRefNo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="jbtnOldVoucher" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jlblIPDNumber" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel9" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="jlblOPDNUmber" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlblRefBy" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jlblName" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jLabel4" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jlblSex" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jLabel6" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel5" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jlblCity" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jLabel8" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jlblArea" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="IPD Number"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Receipt No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtRefNo">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtRefNoKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblName">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="City"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblCity">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sex"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblSex">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblRefBy">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Refe By"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Area"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblArea">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblIPDNumber">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Case Number"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblOPDNUmber">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jbtnOldVoucher">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Show Old Voucher"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnOldVoucherActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanelNavigation">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Bill"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtAmount">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAmountFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtAmountFocusLost"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAmountKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAmountKeyTyped"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel3" alignment="0" pref="571" max="32767" attributes="0"/>
+                          <Component id="jPanel5" alignment="0" pref="572" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="275" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel3" pref="215" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel5" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <Properties>
+                <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="Center"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="7" rowCount="0">
+                        <Column editable="false" title="Date" type="java.lang.Object"/>
+                        <Column editable="false" title="Item" type="java.lang.Object"/>
+                        <Column editable="false" title="Qty" type="java.lang.Object"/>
+                        <Column editable="false" title="Rate" type="java.lang.Object"/>
+                        <Column editable="false" title="Amount" type="java.lang.Object"/>
+                        <Column editable="false" title="Doc Name" type="java.lang.Object"/>
+                        <Column editable="false" title="Doc Alias" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="500" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="200" minWidth="200" prefWidth="200" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="0" minWidth="0" prefWidth="0" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[177, 30]"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel11" min="-2" pref="104" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="jlblTotal" min="-2" pref="143" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jlblTotal" alignment="0" pref="20" max="32767" attributes="0"/>
+                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jlblTotal">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel11">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Total"/>
+              </Properties>
+              <Events>
+                <EventHandler event="componentMoved" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="jLabel11ComponentMoved"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel12">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Amount"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblTotalBill">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblTotalPayment">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel13">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Other Paid  Amount"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel14">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Remaining Amouunt"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblRemPayment">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Date"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel6">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jLabel16" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLabel15" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLabel17" alignment="1" min="-2" pref="89" max="-2" attributes="1"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jlblUserName" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                      <Component id="jlblEditNo" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jlblLstUpdate" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlblUserName" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlblEditNo" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlblLstUpdate" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="User:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Edit No:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel17">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Last Updated:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblLstUpdate">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblEditNo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlblUserName">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="com.toedter.calendar.JDateChooser" name="jtxtVdate">
+    </Component>
+  </SubComponents>
+</Form>

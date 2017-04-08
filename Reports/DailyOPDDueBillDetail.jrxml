@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DailyOPDBillDetail" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="64007b81-9d31-49e4-b9ba-a63cf6b45c46">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="title" class="java.lang.String"/>
+	<field name="sr_no" class="java.lang.String">
+		<fieldDescription><![CDATA[sr_no]]></fieldDescription>
+	</field>
+	<field name="ref_no" class="java.lang.String">
+		<fieldDescription><![CDATA[ref_no]]></fieldDescription>
+	</field>
+	<field name="v_date" class="java.lang.String">
+		<fieldDescription><![CDATA[v_date]]></fieldDescription>
+	</field>
+	<field name="pt_name" class="java.lang.String">
+		<fieldDescription><![CDATA[pt_name]]></fieldDescription>
+	</field>
+	<field name="tot_amt" class="java.lang.String">
+		<fieldDescription><![CDATA[tot_amt]]></fieldDescription>
+	</field>
+	<field name="user" class="java.lang.String">
+		<fieldDescription><![CDATA[user]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="44" uuid="930bdb15-57ee-4b11-ac8e-052a00fece95"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="30" height="20" uuid="c4132865-8fc6-4a93-9d20-6d8c39d930b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SR.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="0" width="88" height="20" uuid="2ebe1217-6bec-43c8-9bab-72b1c54d5141"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="0" width="64" height="20" uuid="816b673a-8ff3-466a-8bcd-6942bc4fa913"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="0" width="221" height="20" uuid="b75a710a-0ed1-450b-8f95-579282828e11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="0" width="79" height="20" uuid="d20390cb-5a5b-496c-a318-dbc43d3c5279"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="0" width="73" height="20" uuid="aebe7af6-3c52-45a0-bff7-19ad714f8d37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="30" height="20" uuid="d4c80b89-7838-4229-8336-081046163bc2"/>
+				<textFieldExpression><![CDATA[$F{sr_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="30" y="0" width="88" height="20" uuid="9e1573d2-611a-412a-a44c-d64273a0b0d9"/>
+				<textFieldExpression><![CDATA[$F{ref_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="118" y="0" width="64" height="20" uuid="d281da06-d868-472c-94d1-6d6e51fc5d0c"/>
+				<textFieldExpression><![CDATA[$F{v_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="182" y="0" width="221" height="20" uuid="802d85be-3a35-4690-abf6-5a9d76329b18"/>
+				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="403" y="0" width="79" height="20" uuid="c035e331-6676-46e0-8fb0-73345951eae6"/>
+				<textFieldExpression><![CDATA[$F{tot_amt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="482" y="0" width="73" height="20" uuid="6e4bf1e5-80df-4f9f-820f-620307cb13b8"/>
+				<textFieldExpression><![CDATA[$F{user}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

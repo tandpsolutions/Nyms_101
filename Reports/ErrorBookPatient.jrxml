@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDAppoinmentBook" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59edc6bb-9e19-40b7-bc05-f27b0f86ba2d">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT a.opd_no,a.pt_name,a1.address,c.city_name,a1.mobile,a2.ac_name,l.user_name FROM patientmst a
+LEFT JOIN patientinfomst a1  ON a.opd_no= a1.opd_no LEFT JOIN login l ON a.user_id = l.user_id
+LEFT JOIN acntmst a2 ON a.ref_by = a2.ac_cd
+ LEFT JOIN citymst c ON a1.city_cd = c.city_cd  WHERE ((a1.mobile ='' OR a1.city_cd = 0 OR a1.city_cd = 33)
+  AND (a.opd_no IN (SELECT opd_no FROM roommst) OR a.opd_no IN (SELECT opd_no FROM appointmentmst))) AND a.ref_by=1]]>
+	</queryString>
+	<field name="opd_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pt_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="city_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ac_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="user_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="117" y="0" width="182" height="20" uuid="29d19298-1db8-41f1-8841-022b2b2bdf37"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="0" width="133" height="20" uuid="7ee25db1-306d-4a86-b907-47e4216927c5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="0" width="96" height="20" uuid="e6916032-21f6-4058-9bc2-42df4662fdde"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="528" y="0" width="68" height="20" uuid="70e9d454-2d10-48d4-bacc-5ed5f7faf43c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="596" y="0" width="74" height="20" uuid="6ef0ccd5-e635-4444-b0f8-133995b3f00b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="21" height="20" uuid="cc7338f3-9a0c-46dc-888c-902f10c01aa8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sr.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="0" width="96" height="20" uuid="9bed9de5-28d7-4e8f-97d9-c6f6a1d7b197"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OPD No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="0" width="132" height="20" uuid="fb6b51a1-8b79-4393-8222-cd778e8acfbf"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ref Doctor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="h.mm a">
+				<reportElement stretchType="RelativeToTallestObject" x="596" y="0" width="74" height="20" uuid="ef3a603b-7c41-4e1d-8823-c1d4c85ed9fb"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mobile}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="117" y="0" width="182" height="20" uuid="f0722b42-15ad-4ff0-9423-d6d5a5585649"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="299" y="0" width="133" height="20" uuid="d54d829c-c3d5-401f-8f2a-002f5c730d35"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="432" y="0" width="96" height="20" uuid="95b5f426-4836-4246-a409-3cd5a182511e"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="528" y="0" width="68" height="20" uuid="db5e746a-e910-4e73-a225-067a4829d435"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="21" height="20" uuid="5efdf0e4-f8be-4544-8b4e-6e00a060d997"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="21" y="0" width="96" height="20" uuid="f6a8c87e-c1f1-4b67-9d58-8e576e3f507e"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{opd_no}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement stretchType="RelativeToTallestObject" x="670" y="0" width="132" height="20" uuid="1134915e-1a63-4dbb-9533-54887a2fac09"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ac_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20">
+			<textField>
+				<reportElement x="202" y="0" width="80" height="20" uuid="321a3a38-3828-4e8d-afcf-ccd7f8f32aa9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="282" y="0" width="40" height="20" uuid="6474df4e-b0d8-4684-946f-9c94a585af97"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

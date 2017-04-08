@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDAppoinmentBook" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="59edc6bb-9e19-40b7-bc05-f27b0f86ba2d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT p.pt_name,i.opd_no,i.ipd_no,i.admit_date,i.dis_date,a.ac_name AS ref,a1.ac_name AS cons, SUM(i1.final_amt)-i.disc_amt AS bill,p.ref_opd_no,b1.BRANCH_NAME, b1.CMPN_NAME,b1.ADDRESS1,b1.ADDRESS2,b1.ADDRESS3,b1.MOBILE,b1.EMAIL,b1.TIN_NO  FROM ipdreg i LEFT JOIN patientmst p ON i.opd_no=p.opd_no LEFT JOIN acntmst a ON p.ref_by=a.ac_cd  LEFT JOIN acntmst a1 ON p.con_doc = a1.ac_cd LEFT JOIN ipdbilldt i1 ON i.ipd_no=i1.ipd_no LEFT JOIN branchmst b1 ON b1.BRANCH_CD =1 WHERE i.dis_date IS NOT NULL AND i1.is_del =0 AND i.dis_date >='2015-05-30' AND i.dis_date <='2015-05-30' GROUP BY i.opd_no  ORDER BY dis_date]]>
+	</queryString>
+	<field name="pt_name" class="java.lang.String">
+		<fieldDescription><![CDATA[pt_name]]></fieldDescription>
+	</field>
+	<field name="ipd_no" class="java.lang.String">
+		<fieldDescription><![CDATA[ipd_no]]></fieldDescription>
+	</field>
+	<field name="ward_name" class="java.lang.String">
+		<fieldDescription><![CDATA[ward_name]]></fieldDescription>
+	</field>
+	<field name="room_cd" class="java.lang.String">
+		<fieldDescription><![CDATA[room_cd]]></fieldDescription>
+	</field>
+	<field name="mother_bed" class="java.lang.String">
+		<fieldDescription><![CDATA[mother_bed]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="35" uuid="01b985b3-eddb-459c-80ef-691be13842f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hospital Status"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="0" width="183" height="20" uuid="29d19298-1db8-41f1-8841-022b2b2bdf37"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="0" width="168" height="20" uuid="7ee25db1-306d-4a86-b907-47e4216927c5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ward Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="21" height="20" uuid="cc7338f3-9a0c-46dc-888c-902f10c01aa8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sr.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="0" width="64" height="20" uuid="d29c3dfe-35da-4e01-8409-233eab6da9e3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IPD #]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="0" width="42" height="20" uuid="31c8276f-3f9c-44b1-a640-a896d95c87a3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bed No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="0" width="77" height="20" uuid="28f3ba5f-7c1e-4121-8463-0ae22944bf33"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="21" y="0" width="183" height="20" uuid="f0722b42-15ad-4ff0-9423-d6d5a5585649"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="268" y="0" width="168" height="20" uuid="d54d829c-c3d5-401f-8f2a-002f5c730d35"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ward_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="21" height="20" uuid="5efdf0e4-f8be-4544-8b4e-6e00a060d997"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement stretchType="RelativeToTallestObject" x="204" y="0" width="64" height="20" uuid="61fc9e09-2552-4728-b00e-e78a34b0d611"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ipd_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="436" y="0" width="42" height="20" uuid="f7e715cd-004b-4c99-9492-ed43be21666a"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{room_cd}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="478" y="0" width="77" height="20" uuid="cb202c61-4c00-41ea-acf0-e067d0708253"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mother_bed}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
