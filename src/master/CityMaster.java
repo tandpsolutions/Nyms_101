@@ -52,10 +52,10 @@ public class CityMaster extends javax.swing.JInternalFrame {
         this.am = form;
         connectToNavigation();
         fillJcomboBox();
+        lb.setUserRightsToPanel(navLoad, form_id + "");
         navLoad.callNew();
         jtxtCityName.setText(city);
         this.form_id = form_id;
-        lb.setUserRightsToPanel(navLoad, form_id + "");
     }
 
     public CityMaster(String city, PatientMaster form, int form_id) {

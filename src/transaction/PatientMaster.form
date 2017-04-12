@@ -112,16 +112,10 @@
                                   <Component id="jLabel17" min="-2" pref="107" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jcmbBlood" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel20" min="-2" pref="72" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jcmbBlood1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jtxtRefAlias" min="-2" pref="52" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jlblRefOPDNo" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jtxtConsAlias" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
@@ -137,7 +131,7 @@
                           <Component id="jtxtDays" min="-2" pref="84" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace min="92" pref="92" max="-2" attributes="0"/>
@@ -182,13 +176,10 @@
                       <Component id="jcmbStatus" linkSize="12" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel17" linkSize="13" alignment="0" min="-2" max="-2" attributes="1"/>
                       <Component id="jcmbBlood" linkSize="13" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel20" linkSize="18" alignment="0" min="-2" max="-2" attributes="1"/>
-                      <Component id="jcmbBlood1" linkSize="18" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton1" linkSize="19" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jlblRefOPDNo" linkSize="19" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jtxtRefAlias" linkSize="15" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="jtxtRefBy" linkSize="15" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="jLabel3" linkSize="15" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
@@ -371,37 +362,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtxtConsAlias">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel20">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Is Mother"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jcmbBlood1">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="No"/>
-                <StringItem index="1" value="Yes"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jcmbBlood1ItemStateChanged"/>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jcmbBlood1KeyPressed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jlblRefOPDNo">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>

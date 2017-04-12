@@ -7,6 +7,8 @@ package transaction;
 
 import hms.HMS101;
 import hms.HMSHome;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +17,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Vector;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 import support.Library;
 import support.PickList;
@@ -40,6 +46,7 @@ public class OPDAppointmentBook extends javax.swing.JInternalFrame {
      */
     public OPDAppointmentBook(String opdNo) {
         initComponents();
+        registerShortKeys();
         this.opdNo = opdNo;
         dtm = (DefaultTableModel) jTable1.getModel();
         lb.setDateChooserPropertyInit(jtxtVdate);
@@ -53,10 +60,20 @@ public class OPDAppointmentBook extends javax.swing.JInternalFrame {
         jtxtAptTime.setText(timeStamp);
         jtxtOPDNo.setEditable(false);
         jbtnRevertCan.setEnabled(false);
-//        if (opdNo.equalsIgnoreCase("")) {
-//            jPanel2.setVisible(false);
-//            jbtnConfApp.setEnabled(false);
-//        }
+    }
+
+    private void registerShortKeys() {
+        lb.setShortcut(this, jbtnClose);
+
+        KeyStroke dateKeyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false);
+        Action dateKeyAction = new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jbtnClose.doClick();
+            }
+        };
+        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(dateKeyStroke, "Date");
+        getRootPane().getActionMap().put("Date", dateKeyAction);
     }
 
     public OPDAppointmentBook(int mode) {
@@ -713,7 +730,7 @@ public class OPDAppointmentBook extends javax.swing.JInternalFrame {
         int row = jTable1.getSelectedRow();
         if (row != -1) {
             this.dispose();
-            OPDBillGeneration opbBill = new OPDBillGeneration(jTable1.getValueAt(row, 3).toString(), jTable1.getValueAt(row, 0).toString(), "VO");
+            OPDBillGeneration opbBill = new OPDBillGeneration(jTable1.getValueAt(row, 3).toString(), jTable1.getValueAt(row, 0).toString(), "OP");
             HMSHome.addOnScreen(opbBill, "OPD Bill Generation Book", 24);
         } else {
             lb.showMessageDailog("Please select appointment first.");
@@ -750,15 +767,15 @@ public class OPDAppointmentBook extends javax.swing.JInternalFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        if(evt.getClickCount() == 2){
+        if (evt.getClickCount() == 2) {
             int row = jTable1.getSelectedRow();
             opdNo = jTable1.getValueAt(row, 3).toString();
             setData();
             jtxtAptDate.setText(jtxtVdate.getText());
             jtxtAptTime.setText(jTable1.getValueAt(row, 5).toString());
             jtxtDoctor.setText(jTable1.getValueAt(row, 6).toString());
-            jtxtDocAlias.setText(lb.getAcCode(lb.getAcCode(jTable1.getValueAt(row, 6).toString(), "C"),"CA"));
-            if(jTable1.getValueAt(row, 7).toString().equalsIgnoreCase("Follow")){
+            jtxtDocAlias.setText(lb.getAcCode(lb.getAcCode(jTable1.getValueAt(row, 6).toString(), "C"), "CA"));
+            if (jTable1.getValueAt(row, 7).toString().equalsIgnoreCase("Follow")) {
                 jcmbPurpose.setSelectedIndex(1);
             } else {
                 jcmbPurpose.setSelectedIndex(0);

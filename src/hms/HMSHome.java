@@ -128,13 +128,8 @@ public class HMSHome extends javax.swing.JFrame {
         tabbedPane.setVisible(true);
         setExtendedState(MAXIMIZED_BOTH);
         openLogFile();
-        clsSysEnv.setAc_year("2014");
+        clsSysEnv.setAc_year("2017");
 //        setTextFromRS();
-        ErrorMessage error = new ErrorMessage(null, true);
-        error.setLocationRelativeTo(null);
-        if (error.dtm.getRowCount() != 0) {
-            error.show();
-        }
         Date d = new Date();
         if (d.getMonth() >= 3) {
             year = (d.getYear() + 1900 + "").substring(2) + ((d.getYear() + 1900 + 1) + "").substring(2);
@@ -396,7 +391,7 @@ public class HMSHome extends javax.swing.JFrame {
         menuMaster.setVisible(lb.isExist("select F.FORM_ID from USERRIGHTS R, FORMMST F WHERE F.FORM_ID=R.FORM_ID AND R.VIEWS=1 AND F.MENU_ID=1"));
         jmnTransaction.setVisible(lb.isExist("select F.FORM_ID from USERRIGHTS R, FORMMST F WHERE F.FORM_ID=R.FORM_ID AND R.VIEWS=1 AND F.MENU_ID=2"));
         jmnReports.setVisible(lb.isExist("select F.FORM_ID from USERRIGHTS R, FORMMST F WHERE F.FORM_ID=R.FORM_ID AND R.VIEWS=1 AND F.MENU_ID=3"));
-        jMenu10.setVisible(lb.isExist("select F.FORM_ID from USERRIGHTS R, FORMMST F WHERE F.FORM_ID=R.FORM_ID AND R.VIEWS=1 AND F.MENU_ID=5"));
+//        jMenu10.setVisible(lb.isExist("select F.FORM_ID from USERRIGHTS R, FORMMST F WHERE F.FORM_ID=R.FORM_ID AND R.VIEWS=1 AND F.MENU_ID=5"));
     }
 
     private void setMenuFalse() throws SQLException {
@@ -430,8 +425,8 @@ public class HMSHome extends javax.swing.JFrame {
         hashMenu.put(19, jmnSpeciality);
         hashMenu.put(110, jmnSubSpeciality);
         hashMenu.put(111, jmnWardMaster);
-        hashMenu.put(112, jmnContTempMst);
-        hashMenu.put(113, jmnContractMst);
+//        hashMenu.put(112, jmnContTempMst);
+//        hashMenu.put(113, jmnContractMst);
 
         hashMenu.put(21, jmnAddPatient);
 
@@ -452,11 +447,11 @@ public class HMSHome extends javax.swing.JFrame {
 
         hashMenu.put(41, jmnHeaderDetail);
         hashMenu.put(42, user_rights);
-        hashMenu.put(43, jmnNamingUtil);
-        hashMenu.put(51, jmnVaccineStockAdd);
-        hashMenu.put(52, jmnVacLedger);
-        hashMenu.put(53, jmnVacStkSum);
-        hashMenu.put(54, jmnSiteMaster);
+//        hashMenu.put(43, jmnNamingUtil);
+//        hashMenu.put(51, jmnVaccineStockAdd);
+//        hashMenu.put(52, jmnVacLedger);
+//        hashMenu.put(53, jmnVacStkSum);
+//        hashMenu.put(54, jmnSiteMaster);
     }
 
     /**
@@ -488,8 +483,6 @@ public class HMSHome extends javax.swing.JFrame {
         jmnSubSpeciality = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jmnWardMaster = new javax.swing.JMenuItem();
-        jmnContTempMst = new javax.swing.JMenuItem();
-        jmnContractMst = new javax.swing.JMenuItem();
         jmnTransaction = new javax.swing.JMenu();
         jmnAddPatient = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
@@ -518,18 +511,9 @@ public class HMSHome extends javax.swing.JFrame {
         jmnHeaderDetail = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
-        jmnNamingUtil = new javax.swing.JMenuItem();
         user_rights = new javax.swing.JMenuItem();
         userGrpMaster = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jmnError = new javax.swing.JMenu();
-        jMenu10 = new javax.swing.JMenu();
-        jmnVaccineStockAdd = new javax.swing.JMenuItem();
-        jmnVacLedger = new javax.swing.JMenuItem();
-        jmnVacStkSum = new javax.swing.JMenuItem();
-        jmnSiteMaster = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -692,24 +676,6 @@ public class HMSHome extends javax.swing.JFrame {
         jMenu6.add(jmnWardMaster);
 
         menuMaster.add(jMenu6);
-
-        jmnContTempMst.setMnemonic('C');
-        jmnContTempMst.setText("Contract Template Master");
-        jmnContTempMst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmnContTempMstActionPerformed(evt);
-            }
-        });
-        menuMaster.add(jmnContTempMst);
-
-        jmnContractMst.setMnemonic('C');
-        jmnContractMst.setText("Contract Master");
-        jmnContractMst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmnContractMstActionPerformed(evt);
-            }
-        });
-        menuMaster.add(jmnContractMst);
 
         jMenuBar1.add(menuMaster);
 
@@ -928,14 +894,6 @@ public class HMSHome extends javax.swing.JFrame {
         });
         jmnUtility.add(jMenuItem15);
 
-        jmnNamingUtil.setText("Naming Utility");
-        jmnNamingUtil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmnNamingUtilActionPerformed(evt);
-            }
-        });
-        jmnUtility.add(jmnNamingUtil);
-
         user_rights.setMnemonic('U');
         user_rights.setText("User Rights");
         user_rights.addActionListener(new java.awt.event.ActionListener() {
@@ -964,68 +922,6 @@ public class HMSHome extends javax.swing.JFrame {
         jmnUtility.add(jMenuItem2);
 
         jMenuBar1.add(jmnUtility);
-
-        jmnError.setText("Error");
-        jmnError.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jmnErrorMouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jmnError);
-
-        jMenu10.setMnemonic('V');
-        jMenu10.setText("Vaccine");
-
-        jmnVaccineStockAdd.setMnemonic('S');
-        jmnVaccineStockAdd.setText("Stock Entry Vaccine");
-        jmnVaccineStockAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmnVaccineStockAddActionPerformed(evt);
-            }
-        });
-        jMenu10.add(jmnVaccineStockAdd);
-
-        jmnVacLedger.setText("Stock Ledger Vaccine");
-        jmnVacLedger.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmnVacLedgerActionPerformed(evt);
-            }
-        });
-        jMenu10.add(jmnVacLedger);
-
-        jmnVacStkSum.setText("Stock Summary by Exp Date");
-        jmnVacStkSum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmnVacStkSumActionPerformed(evt);
-            }
-        });
-        jMenu10.add(jmnVacStkSum);
-
-        jmnSiteMaster.setText("Site Master");
-        jmnSiteMaster.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmnSiteMasterActionPerformed(evt);
-            }
-        });
-        jMenu10.add(jmnSiteMaster);
-
-        jMenuItem10.setText("Critical Limit Stock");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
-            }
-        });
-        jMenu10.add(jMenuItem10);
-
-        jMenuItem11.setText("Critical Stock By Exp");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu10.add(jMenuItem11);
-
-        jMenuBar1.add(jMenu10);
 
         setJMenuBar(jMenuBar1);
 
@@ -1154,15 +1050,6 @@ public class HMSHome extends javax.swing.JFrame {
         addOnScreen(wm, "Ward Master", 111);
     }//GEN-LAST:event_jmnWardMasterActionPerformed
 
-    private void jmnErrorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmnErrorMouseClicked
-        // TODO add your handling code here:
-        ErrorMessage error = new ErrorMessage(null, true);
-        error.setLocationRelativeTo(null);
-        if (error.dtm.getRowCount() != 0) {
-            error.show();
-        }
-    }//GEN-LAST:event_jmnErrorMouseClicked
-
     private void jmnSubSpecialityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnSubSpecialityActionPerformed
         // TODO add your handling code here:
         SubSpecialtyMaster sub = new SubSpecialtyMaster(110);
@@ -1174,12 +1061,6 @@ public class HMSHome extends javax.swing.JFrame {
         BackUp bp = new BackUp();
         addOnScreen(bp, "Back Up", -1);
     }//GEN-LAST:event_jMenuItem15ActionPerformed
-
-    private void jmnContractMstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnContractMstActionPerformed
-        // TODO add your handling code here:
-        ContractMaster cm = new ContractMaster(113);
-        addOnScreen(cm, "Contract Master", 113);
-    }//GEN-LAST:event_jmnContractMstActionPerformed
 
     private void jmnEstimateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnEstimateReportActionPerformed
         // TODO add your handling code here:
@@ -1229,12 +1110,6 @@ public class HMSHome extends javax.swing.JFrame {
         addOnScreen(opd, "OPD Collection Report", 33);
     }//GEN-LAST:event_jmnOPDCollectionActionPerformed
 
-    private void jmnContTempMstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnContTempMstActionPerformed
-        // TODO add your handling code here:
-        ContractTemplateMaster ctm = new ContractTemplateMaster(112);
-        addOnScreen(ctm, "Contract Template Master", 112);
-    }//GEN-LAST:event_jmnContTempMstActionPerformed
-
     private void user_rightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_rightsActionPerformed
         // TODO add your handling code here:
         UserPermission up = new UserPermission(42);
@@ -1283,48 +1158,6 @@ public class HMSHome extends javax.swing.JFrame {
         addOnScreen(ps, "Point System", 311);
     }//GEN-LAST:event_jmnPointSystemActionPerformed
 
-    private void jmnNamingUtilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnNamingUtilActionPerformed
-        // TODO add your handling code here:
-        NamingUtility mu = new NamingUtility();
-        addOnScreen(mu, "Naming Utility", 43);
-    }//GEN-LAST:event_jmnNamingUtilActionPerformed
-
-    private void jmnVaccineStockAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnVaccineStockAddActionPerformed
-        // TODO add your handling code here:
-        VaccineStockAdd vca = new VaccineStockAdd();
-        addOnScreen(vca, "Stock Entry Vaccine", 51);
-    }//GEN-LAST:event_jmnVaccineStockAddActionPerformed
-
-    private void jmnVacLedgerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnVacLedgerActionPerformed
-        // TODO add your handling code here:
-        StockLedger stk = new StockLedger();
-        addOnScreen(stk, "Stock Ledger Vaccine", 52);
-    }//GEN-LAST:event_jmnVacLedgerActionPerformed
-
-    private void jmnVacStkSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnVacStkSumActionPerformed
-        // TODO add your handling code here:
-        StockSummaryByBatch skb = new StockSummaryByBatch();
-        addOnScreen(skb, "Stock SUMMARY NY BATCH", 53);
-    }//GEN-LAST:event_jmnVacStkSumActionPerformed
-
-    private void jmnSiteMasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnSiteMasterActionPerformed
-        // TODO add your handling code here:
-        SiteMaster sm = new SiteMaster(54);
-        addOnScreen(sm, "Site Master", 54);
-    }//GEN-LAST:event_jmnSiteMasterActionPerformed
-
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        // TODO add your handling code here:
-        CriticalVaccineStock cvs = new CriticalVaccineStock();
-        addOnScreen(cvs, "Critical Vaccine Stock", 56);
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
-
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
-        CriticalStockByExp cse = new CriticalStockByExp();
-        addOnScreen(cse, "Critical Stock BY  Exp", 57);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
     private void jmnDailyActivitySummaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmnDailyActivitySummaryActionPerformed
         // TODO add your handling code here:
         DailyActivitySummary das = new DailyActivitySummary(314);
@@ -1340,7 +1173,6 @@ public class HMSHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -1350,8 +1182,6 @@ public class HMSHome extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem2;
@@ -1364,8 +1194,6 @@ public class HMSHome extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmnBillGrpMst;
     private javax.swing.JMenuItem jmnBillItemMst;
     private javax.swing.JMenuItem jmnCityMst;
-    private javax.swing.JMenuItem jmnContTempMst;
-    private javax.swing.JMenuItem jmnContractMst;
     private javax.swing.JMenuItem jmnCountry;
     private javax.swing.JMenuItem jmnDCR;
     private javax.swing.JMenuItem jmnDailyActivity;
@@ -1375,27 +1203,21 @@ public class HMSHome extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmnDoctorGroup;
     private javax.swing.JMenuItem jmnDoctorItem;
     private javax.swing.JMenuItem jmnDoctorItem1;
-    private javax.swing.JMenu jmnError;
     private javax.swing.JMenuItem jmnEstimateReport;
     private javax.swing.JMenuItem jmnGrpMaster;
     private javax.swing.JMenuItem jmnHeaderDetail;
     private javax.swing.JMenuItem jmnHospitalBill;
     private javax.swing.JMenuItem jmnHospitalOccupency;
-    private javax.swing.JMenuItem jmnNamingUtil;
     private javax.swing.JMenuItem jmnOPDCollection;
     private javax.swing.JMenuItem jmnOPDList;
     private javax.swing.JMenuItem jmnPointSystem;
     private javax.swing.JMenuItem jmnRefDoctor;
     private javax.swing.JMenu jmnReports;
-    private javax.swing.JMenuItem jmnSiteMaster;
     private javax.swing.JMenuItem jmnSpeciality;
     private javax.swing.JMenuItem jmnStateMst;
     private javax.swing.JMenuItem jmnSubSpeciality;
     private javax.swing.JMenu jmnTransaction;
     private javax.swing.JMenu jmnUtility;
-    private javax.swing.JMenuItem jmnVacLedger;
-    private javax.swing.JMenuItem jmnVacStkSum;
-    private javax.swing.JMenuItem jmnVaccineStockAdd;
     private javax.swing.JMenuItem jmnWardMaster;
     private javax.swing.JMenu menuMaster;
     private javax.swing.JMenuItem userGrpMaster;

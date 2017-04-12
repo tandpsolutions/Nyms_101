@@ -62,7 +62,7 @@ public class OPDPatientListDateWise extends javax.swing.JInternalFrame {
                             + "  LEFT JOIN acntmst a ON a1.cons_doc=a.ac_cd  LEFT JOIN patientmst p1 ON a1.opd_no=p1.opd_no "
                             + " left join patientinfomst p2 on p1.opd_no=p2.opd_no "
                             + "  where a1.appoint_date >='" + lb.ConvertDateFormetForDB(jtxtFromDate.getText()) + "' and "
-                            + "  a1.appoint_date <='" + lb.ConvertDateFormetForDB(jtxtToDate.getText()) + "' and o.ref_no <>'' ";
+                            + "  a1.appoint_date <='" + lb.ConvertDateFormetForDB(jtxtToDate.getText()) + "' ";
                     if (!jtxtDocAlias.getText().equalsIgnoreCase("")) {
                         sql += " and a1.cons_doc=" + lb.getAcCode(jtxtDocAlias.getText(), "AC");
                     }

@@ -958,7 +958,7 @@ public class Library {
         JasperPrint print = null;
 //        jScrollPane1.setVisible(false);
         try {
-            print = JasperFillManager.fillReport(System.getProperty("user.dir") + File.separatorChar + "Reports\\" + fileName, params, dataSource);
+            print = JasperFillManager.fillReport(System.getProperty("user.dir") + File.separatorChar + "Reports" + File.separatorChar + fileName, params, dataSource);
             panelReport.removeAll();
             JRViewer jrViewer = new JRViewer(print);
             ((JPanel) jrViewer.getComponent(0)).remove(1);

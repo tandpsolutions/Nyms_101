@@ -615,162 +615,162 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
     }
 
     private void addJtextBox() {
-        jPanel4.removeAll();
-        jtxtItem.setVisible(false);
-        jtxtQty.setVisible(false);
-        jtxtRate.setVisible(false);
-        jtxtAmt.setVisible(false);
-        jtxtRefAlias.setVisible(false);
-        jtxtRefBy.setVisible(false);
-
-        jtxtItem.setBounds(0, 0, 20, 20);
-        jtxtItem.setVisible(true);
-        jPanel4.add(jtxtItem);
-
-        jtxtQty.setBounds(0, 0, 20, 20);
-        jtxtQty.setVisible(true);
-        jPanel4.add(jtxtQty);
-
-        jtxtRate.setBounds(0, 0, 20, 20);
-        jtxtRate.setVisible(true);
-        jPanel4.add(jtxtRate);
-
-        jtxtAmt.setBounds(0, 0, 20, 20);
-        jtxtAmt.setVisible(true);
-        jPanel4.add(jtxtAmt);
-
-        jtxtDiscAmt.setBounds(0, 0, 20, 20);
-        jtxtDiscAmt.setVisible(true);
-        jPanel4.add(jtxtDiscAmt);
-
-        jtxtFinalAmt.setBounds(0, 0, 20, 20);
-        jtxtFinalAmt.setVisible(true);
-        jPanel4.add(jtxtFinalAmt);
-
-        jtxtRefBy.setBounds(0, 0, 20, 20);
-        jtxtRefBy.setVisible(true);
-        jPanel4.add(jtxtRefBy);
+//        jPanel4.removeAll();
+//        jtxtItem.setVisible(false);
+//        jtxtQty.setVisible(false);
+//        jtxtRate.setVisible(false);
+//        jtxtAmt.setVisible(false);
+//        jtxtRefAlias.setVisible(false);
+//        jtxtRefBy.setVisible(false);
+//
+//        jtxtItem.setBounds(0, 0, 20, 20);
+//        jtxtItem.setVisible(true);
+//        jPanel4.add(jtxtItem);
+//
+//        jtxtQty.setBounds(0, 0, 20, 20);
+//        jtxtQty.setVisible(true);
+//        jPanel4.add(jtxtQty);
+//
+//        jtxtRate.setBounds(0, 0, 20, 20);
+//        jtxtRate.setVisible(true);
+//        jPanel4.add(jtxtRate);
+//
+//        jtxtAmt.setBounds(0, 0, 20, 20);
+//        jtxtAmt.setVisible(true);
+//        jPanel4.add(jtxtAmt);
+//
+//        jtxtDiscAmt.setBounds(0, 0, 20, 20);
+//        jtxtDiscAmt.setVisible(true);
+//        jPanel4.add(jtxtDiscAmt);
+//
+//        jtxtFinalAmt.setBounds(0, 0, 20, 20);
+//        jtxtFinalAmt.setVisible(true);
+//        jPanel4.add(jtxtFinalAmt);
+//
+//        jtxtRefBy.setBounds(0, 0, 20, 20);
+//        jtxtRefBy.setVisible(true);
+//        jPanel4.add(jtxtRefBy);
 
         setTable();
     }
 
     private void addJlabel() {
-        jPanel5.removeAll();
-        jlblTotal.setVisible(false);
-        jLabel9.setVisible(false);
-
-        jlblTotal.setBounds(0, 0, 20, 20);
-        jlblTotal.setVisible(true);
-        jPanel5.add(jlblTotal);
-
-        jLabel9.setBounds(0, 0, 20, 20);
-        jLabel9.setVisible(true);
-        jPanel5.add(jLabel9);
+//        jPanel5.removeAll();
+//        jlblTotal.setVisible(false);
+//        jLabel9.setVisible(false);
+//
+//        jlblTotal.setBounds(0, 0, 20, 20);
+//        jlblTotal.setVisible(true);
+//        jPanel5.add(jlblTotal);
+//
+//        jLabel9.setBounds(0, 0, 20, 20);
+//        jLabel9.setVisible(true);
+//        jPanel5.add(jLabel9);
         setTable();
     }
 
     private void addJlabelNetAmt() {
-        jPanel9.removeAll();
-        jlblNetAmt.setVisible(false);
-        jLabel10.setVisible(false);
-
-        jlblNetAmt.setBounds(0, 0, 20, 20);
-        jlblNetAmt.setVisible(true);
-        jPanel9.add(jlblNetAmt);
-
-        jLabel10.setBounds(0, 0, 20, 20);
-        jLabel10.setVisible(true);
-        jPanel9.add(jLabel10);
+//        jPanel9.removeAll();
+//        jlblNetAmt.setVisible(false);
+//        jLabel10.setVisible(false);
+//
+//        jlblNetAmt.setBounds(0, 0, 20, 20);
+//        jlblNetAmt.setVisible(true);
+//        jPanel9.add(jlblNetAmt);
+//
+//        jLabel10.setBounds(0, 0, 20, 20);
+//        jLabel10.setVisible(true);
+//        jPanel9.add(jLabel10);
         setTable();
     }
 
     private void addJlabelDiscountAmt() {
-        jPanel10.removeAll();
-        jLabel11.setVisible(false);
-        jtxtDiscount.setVisible(false);
-
-        jLabel11.setBounds(0, 0, 20, 20);
-        jLabel11.setVisible(true);
-        jPanel10.add(jLabel11);
-
-        jtxtDiscount.setBounds(0, 0, 20, 20);
-        jtxtDiscount.setVisible(true);
-        jPanel10.add(jtxtDiscount);
+//        jPanel10.removeAll();
+//        jLabel11.setVisible(false);
+//        jtxtDiscount.setVisible(false);
+//
+//        jLabel11.setBounds(0, 0, 20, 20);
+//        jLabel11.setVisible(true);
+//        jPanel10.add(jLabel11);
+//
+//        jtxtDiscount.setBounds(0, 0, 20, 20);
+//        jtxtDiscount.setVisible(true);
+//        jPanel10.add(jtxtDiscount);
         setTable();
     }
 
     private void addJlabelRemainingAmt() {
-        jPanel11.removeAll();
-        jLabel12.setVisible(false);
-        jlblRemainingAmt.setVisible(false);
-
-        jLabel12.setBounds(0, 0, 20, 20);
-        jLabel12.setVisible(true);
-        jPanel11.add(jLabel12);
-
-        jlblRemainingAmt.setBounds(0, 0, 20, 20);
-        jlblRemainingAmt.setVisible(true);
-        jPanel11.add(jlblRemainingAmt);
+//        jPanel11.removeAll();
+//        jLabel12.setVisible(false);
+//        jlblRemainingAmt.setVisible(false);
+//
+//        jLabel12.setBounds(0, 0, 20, 20);
+//        jLabel12.setVisible(true);
+//        jPanel11.add(jLabel12);
+//
+//        jlblRemainingAmt.setBounds(0, 0, 20, 20);
+//        jlblRemainingAmt.setVisible(true);
+//        jPanel11.add(jlblRemainingAmt);
         setTable();
     }
 
     private void addJlabelPaidAmt() {
-        jPanel13.removeAll();
-        jLabel15.setVisible(false);
-        jtxtPaidAmount.setVisible(false);
-
-        jLabel15.setBounds(0, 0, 20, 20);
-        jLabel15.setVisible(true);
-        jPanel13.add(jLabel15);
-
-        jtxtPaidAmount.setBounds(0, 0, 20, 20);
-        jtxtPaidAmount.setVisible(true);
-        jPanel13.add(jtxtPaidAmount);
+//        jPanel13.removeAll();
+//        jLabel15.setVisible(false);
+//        jtxtPaidAmount.setVisible(false);
+//
+//        jLabel15.setBounds(0, 0, 20, 20);
+//        jLabel15.setVisible(true);
+//        jPanel13.add(jLabel15);
+//
+//        jtxtPaidAmount.setBounds(0, 0, 20, 20);
+//        jtxtPaidAmount.setVisible(true);
+//        jPanel13.add(jtxtPaidAmount);
         setTable();
     }
 
     private void addJlabelDueAmt() {
-        jPanel12.removeAll();
-        jLabel13.setVisible(false);
-        jlblDueAmount.setVisible(false);
-
-        jLabel13.setBounds(0, 0, 20, 20);
-        jLabel13.setVisible(true);
-        jPanel12.add(jLabel13);
-
-        jlblDueAmount.setBounds(0, 0, 20, 20);
-        jlblDueAmount.setVisible(true);
-        jPanel12.add(jlblDueAmount);
+//        jPanel12.removeAll();
+//        jLabel13.setVisible(false);
+//        jlblDueAmount.setVisible(false);
+//
+//        jLabel13.setBounds(0, 0, 20, 20);
+//        jLabel13.setVisible(true);
+//        jPanel12.add(jLabel13);
+//
+//        jlblDueAmount.setBounds(0, 0, 20, 20);
+//        jlblDueAmount.setVisible(true);
+//        jPanel12.add(jlblDueAmount);
         setTable();
     }
 
     private void addJlabelAdvance() {
-        jPanel14.removeAll();
-        jLabel16.setVisible(false);
-        jlblAdvanceAmt.setVisible(false);
-
-        jLabel16.setBounds(0, 0, 20, 20);
-        jLabel16.setVisible(true);
-        jPanel14.add(jLabel16);
-
-        jlblAdvanceAmt.setBounds(0, 0, 20, 20);
-        jlblAdvanceAmt.setVisible(true);
-        jPanel14.add(jlblAdvanceAmt);
+//        jPanel14.removeAll();
+//        jLabel16.setVisible(false);
+//        jlblAdvanceAmt.setVisible(false);
+//
+//        jLabel16.setBounds(0, 0, 20, 20);
+//        jLabel16.setVisible(true);
+//        jPanel14.add(jLabel16);
+//
+//        jlblAdvanceAmt.setBounds(0, 0, 20, 20);
+//        jlblAdvanceAmt.setVisible(true);
+//        jPanel14.add(jlblAdvanceAmt);
         setTable();
     }
 
     private void addJlabelRefund() {
-        jPanel15.removeAll();
-        jLabel20.setVisible(false);
-        jlblRefund.setVisible(false);
-
-        jLabel20.setBounds(0, 0, 20, 20);
-        jLabel20.setVisible(true);
-        jPanel15.add(jLabel20);
-
-        jlblRefund.setBounds(0, 0, 20, 20);
-        jlblRefund.setVisible(true);
-        jPanel15.add(jlblRefund);
+//        jPanel15.removeAll();
+//        jLabel20.setVisible(false);
+//        jlblRefund.setVisible(false);
+//
+//        jLabel20.setBounds(0, 0, 20, 20);
+//        jLabel20.setVisible(true);
+//        jPanel15.add(jLabel20);
+//
+//        jlblRefund.setBounds(0, 0, 20, 20);
+//        jlblRefund.setVisible(true);
+//        jPanel15.add(jlblRefund);
         setTable();
     }
 
@@ -779,9 +779,6 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         jPanel4.setVisible(false);
         lb.setTable(jTable1, new JComponent[]{jtxtItem, jtxtQty, jtxtRate, jtxtAmt, jtxtDiscAmt, jtxtFinalAmt, jtxtRefBy, null, null, null});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblTotal, jLabel9, null, null, null});
-//        lb.setTable(jTable1, new JComponent[]{null, null, null, null, jLabel7, jcmbTax, jlblTaxableAmt});
-//        lb.setTable(jTable1, new JComponent[]{null, null, null, null, jLabel8, null, jlblTaxAmt});
-//        lb.setTable(jTable1, new JComponent[]{null, null, null, null, jLabel9, null, jlblAddTaxAmt});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblNetAmt, jLabel10, null, null, null});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblAdvanceAmt, jLabel16, null, null, null});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblRefund, jLabel20, null, null, null});
@@ -1143,6 +1140,11 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         jPanel5.setPreferredSize(new java.awt.Dimension(177, 30));
 
         jlblTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jlblTotal.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                jlblTotalComponentMoved(evt);
+            }
+        });
 
         jLabel9.setText("Total");
 
@@ -1983,6 +1985,11 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         IPDAdvanceReceipt ipd = new IPDAdvanceReceipt(jlblIPDNumber.getText(), -1);
         addOnScreen(ipd, "IPD Advance Receipt", 29);
     }//GEN-LAST:event_jbtnRefundActionPerformed
+
+    private void jlblTotalComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jlblTotalComponentMoved
+        // TODO add your handling code here:
+        setTable();
+    }//GEN-LAST:event_jlblTotalComponentMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

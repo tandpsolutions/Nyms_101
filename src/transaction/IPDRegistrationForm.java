@@ -125,28 +125,6 @@ public class IPDRegistrationForm extends javax.swing.JInternalFrame {
         table.makeTable();
     }
 
-    private void sendSms() {
-        try {
-            String doc_message = "Thank you for refering " + jlblName.getText() + ", we will discuss with you soon "
-                    + "regarding clinical course and progress of the patient.";
-            String pt_message = jlblName.getText() + " has been admitted at Apple Children Hospital. Please contact"
-                    + " Shekhar sing/Dhruv Chauhan for billing, Vatsalaben or Nalinbhai for housekeeping. "
-                    + "Please give your valuable feedback to Mitalben.";
-
-            SMS pt_data = lb.sendMessage(pt_message, jtxtMobile.getText());
-            String sql = "update ipdreg set pt_sms_id='" + pt_data.getMessageid() + "' where ipd_no='" + ipd_no + "'";
-            PreparedStatement pstUpdate = dataConnection.prepareStatement(sql);
-            pstUpdate.executeUpdate();
-
-            SMS doc_data = lb.sendMessage(doc_message, lb.getData("mobile1", "phbkmst", "ac_cd", lb.getAcCode(jtxtDocAlias.getText(), "AC"), 1));
-            sql = "update ipdreg set doc_sms_id='" + doc_data.getMessageid() + "' where ipd_no='" + ipd_no + "'";
-            pstUpdate = dataConnection.prepareStatement(sql);
-            pstUpdate.executeUpdate();
-        } catch (Exception ex) {
-            lb.printToLogFile("Exception at send message", ex);
-        }
-    }
-
     private void addNavigationPanel() {
         class navPanel extends NavigationPanel {
 
@@ -205,10 +183,6 @@ public class IPDRegistrationForm extends javax.swing.JInternalFrame {
                 pstLocal.setString(1, jtxtOPDNo.getText());
                 pstLocal.setString(2, jlblBedNo.getText());
                 pstLocal.executeUpdate();
-
-                if (getMode().equalsIgnoreCase("N")) {
-                    sendSms();
-                }
             }
 
             @Override

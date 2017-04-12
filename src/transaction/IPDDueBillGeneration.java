@@ -44,6 +44,7 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
     private PaymentDialog pd = new PaymentDialog(null, true);
     ReportTable table = null;
     public String tableDt = "ipdbilldt";
+
     /**
      * Creates new form OPDBillGeneration
      */
@@ -61,13 +62,7 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
         setPickListView();
         addJtextBox();
         addJlabel();
-        //        addJlabelNetAmt();
-        jPanel9.setVisible(false);
-//        addJlabelAdvanceAmt();
-        jPanel10.setVisible(false);
-//        addJlabelRemainingAmt();
-        jPanel11.setVisible(false);
-        if(HMSHome.role != 1){
+        if (HMSHome.role != 1) {
             jbtnOldVoucher.setVisible(false);
         }
     }
@@ -82,15 +77,9 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
         setPickListView();
         addJtextBox();
         addJlabel();
-//        addJlabelNetAmt();
-        jPanel9.setVisible(false);
-//        addJlabelAdvanceAmt();
-        jPanel10.setVisible(false);
-//        addJlabelRemainingAmt();
-        jPanel11.setVisible(false);
         navLoad.setVoucher("Last");
         lb.setUserRightsToPanel1(navLoad, "28");
-        if(HMSHome.role != 1){
+        if (HMSHome.role != 1) {
             jbtnOldVoucher.setVisible(false);
         }
     }
@@ -283,15 +272,15 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
                 setComponentEnabled(false);
                 lb.setUserRightsToPanel1(navLoad, "28");
                 if (tag.equalsIgnoreCase("First")) {
-                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join "+tableDt+" b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select min(ref_no) from "+tableDt+" where is_del = 0)");
+                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join " + tableDt + " b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select min(ref_no) from " + tableDt + " where is_del = 0)");
                 } else if (tag.equalsIgnoreCase("Previous")) {
-                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join "+tableDt+" b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select max(ref_no) from "+tableDt+" where is_del = 0 and ref_no <'" + ref_no + "')");
+                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join " + tableDt + " b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select max(ref_no) from " + tableDt + " where is_del = 0 and ref_no <'" + ref_no + "')");
                 } else if (tag.equalsIgnoreCase("Next")) {
-                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join "+tableDt+" b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select min(ref_no) from "+tableDt+" where is_del = 0 and ref_no >'" + ref_no + "')");
+                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join " + tableDt + " b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select min(ref_no) from " + tableDt + " where is_del = 0 and ref_no >'" + ref_no + "')");
                 } else if (tag.equalsIgnoreCase("Last")) {
-                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join "+tableDt+" b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select max(ref_no) from "+tableDt+" where is_del = 0)");
+                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join " + tableDt + " b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no=(select max(ref_no) from " + tableDt + " where is_del = 0)");
                 } else if (tag.equalsIgnoreCase("edit")) {
-                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join "+tableDt+" b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no ='" + ref_no + "' and is_del = 0");
+                    viewDataRs = fetchData("select *,b.doc_cd as doc,b.ref_no as ref,b.user_id as user,b.edit_no as edit,b.time_stamp as time from ipdreg a left join " + tableDt + " b on a.ipd_no=b.ipd_no where b.is_del = 0 and b.ref_no ='" + ref_no + "' and is_del = 0");
                 }
                 try {
                     if (viewDataRs.next()) {
@@ -305,6 +294,7 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
 
             @Override
             public void setComponentText() {
+                setTable();
                 Component[] cont = jPanel1.getComponents();
                 for (int i = 0; i < cont.length; i++) {
                     if (cont[i] instanceof JLabel) {
@@ -421,43 +411,43 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
     }
 
     private void addJtextBox() {
-        jPanel4.removeAll();
-        jtxtItem.setVisible(false);
-        jtxtQty.setVisible(false);
-        jtxtRate.setVisible(false);
-        jtxtAmt.setVisible(false);
-        jtxtDiscAmt.setVisible(false);
-        jtxtFinalAmt.setVisible(false);
+//        jPanel4.removeAll();
+//        jtxtItem.setVisible(false);
+//        jtxtQty.setVisible(false);
+//        jtxtRate.setVisible(false);
+//        jtxtAmt.setVisible(false);
+//        jtxtDiscAmt.setVisible(false);
+//        jtxtFinalAmt.setVisible(false);
         jtxtRefAlias.setVisible(false);
-        jtxtRefBy.setVisible(false);
-
-        jtxtItem.setBounds(0, 0, 20, 20);
-        jtxtItem.setVisible(true);
-        jPanel4.add(jtxtItem);
-
-        jtxtQty.setBounds(0, 0, 20, 20);
-        jtxtQty.setVisible(true);
-        jPanel4.add(jtxtQty);
-
-        jtxtRate.setBounds(0, 0, 20, 20);
-        jtxtRate.setVisible(true);
-        jPanel4.add(jtxtRate);
-
-        jtxtAmt.setBounds(0, 0, 20, 20);
-        jtxtAmt.setVisible(true);
-        jPanel4.add(jtxtAmt);
-
-        jtxtDiscAmt.setBounds(0, 0, 20, 20);
-        jtxtDiscAmt.setVisible(true);
-        jPanel4.add(jtxtDiscAmt);
-
-        jtxtFinalAmt.setBounds(0, 0, 20, 20);
-        jtxtFinalAmt.setVisible(true);
-        jPanel4.add(jtxtFinalAmt);
-
-        jtxtRefBy.setBounds(0, 0, 20, 20);
-        jtxtRefBy.setVisible(true);
-        jPanel4.add(jtxtRefBy);
+//        jtxtRefBy.setVisible(false);
+//
+//        jtxtItem.setBounds(0, 0, 20, 20);
+//        jtxtItem.setVisible(true);
+//        jPanel4.add(jtxtItem);
+//
+//        jtxtQty.setBounds(0, 0, 20, 20);
+//        jtxtQty.setVisible(true);
+//        jPanel4.add(jtxtQty);
+//
+//        jtxtRate.setBounds(0, 0, 20, 20);
+//        jtxtRate.setVisible(true);
+//        jPanel4.add(jtxtRate);
+//
+//        jtxtAmt.setBounds(0, 0, 20, 20);
+//        jtxtAmt.setVisible(true);
+//        jPanel4.add(jtxtAmt);
+//
+//        jtxtDiscAmt.setBounds(0, 0, 20, 20);
+//        jtxtDiscAmt.setVisible(true);
+//        jPanel4.add(jtxtDiscAmt);
+//
+//        jtxtFinalAmt.setBounds(0, 0, 20, 20);
+//        jtxtFinalAmt.setVisible(true);
+//        jPanel4.add(jtxtFinalAmt);
+//
+//        jtxtRefBy.setBounds(0, 0, 20, 20);
+//        jtxtRefBy.setVisible(true);
+//        jPanel4.add(jtxtRefBy);
 
         setTable();
     }
@@ -477,60 +467,9 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
         setTable();
     }
 
-    private void addJlabelNetAmt() {
-        jPanel9.removeAll();
-        jlblNetAmt.setVisible(false);
-        jLabel10.setVisible(false);
-
-        jlblNetAmt.setBounds(0, 0, 20, 20);
-        jlblNetAmt.setVisible(true);
-        jPanel9.add(jlblNetAmt);
-
-        jLabel10.setBounds(0, 0, 20, 20);
-        jLabel10.setVisible(true);
-        jPanel9.add(jLabel10);
-        setTable();
-    }
-
-    private void addJlabelAdvanceAmt() {
-        jPanel10.removeAll();
-        jLabel11.setVisible(false);
-        jtxtDiscount.setVisible(false);
-
-        jLabel11.setBounds(0, 0, 20, 20);
-        jLabel11.setVisible(true);
-        jPanel10.add(jLabel11);
-
-        jtxtDiscount.setBounds(0, 0, 20, 20);
-        jtxtDiscount.setVisible(true);
-        jPanel10.add(jtxtDiscount);
-        setTable();
-    }
-
-    private void addJlabelRemainingAmt() {
-        jPanel11.removeAll();
-        jLabel12.setVisible(false);
-        jlblRemainingAmt.setVisible(false);
-
-        jLabel12.setBounds(0, 0, 20, 20);
-        jLabel12.setVisible(true);
-        jPanel11.add(jLabel12);
-
-        jlblRemainingAmt.setBounds(0, 0, 20, 20);
-        jlblRemainingAmt.setVisible(true);
-        jPanel11.add(jlblRemainingAmt);
-        setTable();
-    }
-
     private void setTable() {
         lb.setTable(jTable1, new JComponent[]{jtxtItem, jtxtQty, jtxtRate, jtxtAmt, jtxtDiscAmt, jtxtFinalAmt, jtxtRefBy, null});
         lb.setTable(jTable1, new JComponent[]{null, jLabel9, null, null, null, jlblTotal, null, null});
-//        lb.setTable(jTable1, new JComponent[]{null, null, null, null, jLabel7, jcmbTax, jlblTaxableAmt});
-//        lb.setTable(jTable1, new JComponent[]{null, null, null, null, jLabel8, null, jlblTaxAmt});
-//        lb.setTable(jTable1, new JComponent[]{null, null, null, null, jLabel9, null, jlblAddTaxAmt});
-//        lb.setTable(jTable1, new JComponent[]{null, jLabel10, null, jlblNetAmt, null, null});
-//        lb.setTable(jTable1, new JComponent[]{null, jLabel11, null, jtxtDiscount, null, null});
-//        lb.setTable(jTable1, new JComponent[]{null, jLabel12, null, jlblRemainingAmt, null, null});
     }
 
     private boolean validateRow() {
@@ -554,9 +493,7 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
         for (int i = 0; i < jTable1.getRowCount(); i++) {
             amt += lb.isNumber(jTable1.getValueAt(i, 5).toString());
         }
-        jlblNetAmt.setText(lb.Convert2DecFmtForRs(amt));
         jlblTotal.setText(lb.Convert2DecFmtForRs(amt));
-//        jlblRemainingAmt.setText(lb.Convert2DecFmtForRs(amt - lb.isNumber(jtxtPaidAmt)));
     }
 
     private void clearRow() {
@@ -605,18 +542,12 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
         jtxtVdate = new com.toedter.calendar.JDateChooser();
         jPanelNavigation = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jlblNetAmt = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jlblTotal = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jtxtDiscount = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jtxtQty = new javax.swing.JTextField();
         jtxtRate = new javax.swing.JTextField();
@@ -626,9 +557,6 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
         jtxtRefAlias = new javax.swing.JTextField();
         jtxtDiscAmt = new javax.swing.JTextField();
         jtxtFinalAmt = new javax.swing.JTextField();
-        jPanel11 = new javax.swing.JPanel();
-        jlblRemainingAmt = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -833,31 +761,6 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
 
         jPanelNavigation.setLayout(new java.awt.BorderLayout());
 
-        jPanel9.setPreferredSize(new java.awt.Dimension(177, 30));
-
-        jlblNetAmt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel10.setText("Net Amt");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(150, 150, 150)
-                .addComponent(jlblNetAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlblNetAmt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
         jPanel5.setPreferredSize(new java.awt.Dimension(177, 30));
 
         jlblTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -929,57 +832,19 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
 
         jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jPanel10.setPreferredSize(new java.awt.Dimension(177, 30));
-
-        jLabel11.setText("Discount");
-
-        jtxtDiscount.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jtxtDiscountFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtxtDiscountFocusLost(evt);
-            }
-        });
-        jtxtDiscount.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jtxtDiscountKeyPressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167)
-                .addComponent(jtxtDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jtxtDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
         jPanel4.setPreferredSize(new java.awt.Dimension(826, 30));
 
-        jtxtQty.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentMoved(java.awt.event.ComponentEvent evt) {
-                jtxtQtyComponentMoved(evt);
-            }
-        });
         jtxtQty.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtxtQtyFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jtxtQtyFocusLost(evt);
+            }
+        });
+        jtxtQty.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                jtxtQtyComponentMoved(evt);
             }
         });
         jtxtQty.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1072,6 +937,11 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
                 jtxtFinalAmtFocusLost(evt);
             }
         });
+        jtxtFinalAmt.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                jtxtFinalAmtComponentMoved(evt);
+            }
+        });
         jtxtFinalAmt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jtxtFinalAmtKeyPressed(evt);
@@ -1099,48 +969,25 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
                 .addComponent(jtxtDiscAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtxtFinalAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGap(171, 171, 171))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtxtRefAlias, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtRefBy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtRefAlias, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtDiscAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtFinalAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0))
         );
 
-        jPanel11.setPreferredSize(new java.awt.Dimension(177, 30));
-
-        jlblRemainingAmt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel12.setText("Remaining");
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(150, 150, 150)
-                .addComponent(jlblRemainingAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlblRemainingAmt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jLabel12)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jtxtAmt, jtxtDiscAmt, jtxtFinalAmt, jtxtItem, jtxtQty, jtxtRate, jtxtRefAlias, jtxtRefBy});
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1149,12 +996,9 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -1163,15 +1007,9 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1382,7 +1220,7 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
                     .addComponent(jPanelNavigation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 712, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 718, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1456,24 +1294,6 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_jbtnAddActionPerformed
-
-    private void jtxtDiscountFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtDiscountFocusGained
-        // TODO add your handling code here:
-        lb.selectAll(evt);
-    }//GEN-LAST:event_jtxtDiscountFocusGained
-
-    private void jtxtDiscountFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxtDiscountFocusLost
-        // TODO add your handling code here:
-        lb.toDouble(evt);
-        setTotal();
-    }//GEN-LAST:event_jtxtDiscountFocusLost
-
-    private void jtxtDiscountKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtDiscountKeyPressed
-        // TODO add your handling code here:
-        if (lb.isEnter(evt)) {
-            navLoad.setSaveFocus();
-        }
-    }//GEN-LAST:event_jtxtDiscountKeyPressed
 
     private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
         // TODO add your handling code here:
@@ -1718,18 +1538,20 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
     private void jbtnOldVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnOldVoucherActionPerformed
         // TODO add your handling code here:
         IPDDueBillGeneration ipd = new IPDDueBillGeneration();
-        ipd.tableDt="ipdbilldtlg";
+        ipd.tableDt = "ipdbilldtlg";
         ipd.setID(ref_no);
         HMSHome.addOnScreen(ipd, "Old IPD Due Billing", -1);
     }//GEN-LAST:event_jbtnOldVoucherActionPerformed
+
+    private void jtxtFinalAmtComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jtxtFinalAmtComponentMoved
+        // TODO add your handling code here:
+        setTable();
+    }//GEN-LAST:event_jtxtFinalAmtComponentMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1748,8 +1570,6 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1758,7 +1578,6 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelNavigation;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1777,19 +1596,16 @@ public class IPDDueBillGeneration extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlblIPDNumber;
     private javax.swing.JLabel jlblLstUpdate;
     private javax.swing.JLabel jlblName;
-    private javax.swing.JLabel jlblNetAmt;
     private javax.swing.JLabel jlblOPDNUmber;
     private javax.swing.JLabel jlblRefBy;
     private javax.swing.JLabel jlblRefund;
     private javax.swing.JLabel jlblRelative;
-    private javax.swing.JLabel jlblRemainingAmt;
     private javax.swing.JLabel jlblSex;
     private javax.swing.JLabel jlblTotal;
     private javax.swing.JLabel jlblTotalBill;
     private javax.swing.JLabel jlblUserName;
     private javax.swing.JTextField jtxtAmt;
     private javax.swing.JTextField jtxtDiscAmt;
-    private javax.swing.JTextField jtxtDiscount;
     private javax.swing.JTextField jtxtFinalAmt;
     private javax.swing.JTextField jtxtItem;
     private javax.swing.JTextField jtxtQty;

@@ -346,13 +346,13 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jPanel5" pref="554" max="32767" attributes="0"/>
-                      <Component id="jPanel9" alignment="0" pref="554" max="32767" attributes="0"/>
-                      <Component id="jPanel10" alignment="0" pref="554" max="32767" attributes="0"/>
-                      <Component id="jPanel11" alignment="0" pref="554" max="32767" attributes="0"/>
-                      <Component id="jPanel4" pref="554" max="32767" attributes="0"/>
+                      <Component id="jPanel5" pref="566" max="32767" attributes="0"/>
+                      <Component id="jPanel9" alignment="0" pref="566" max="32767" attributes="0"/>
+                      <Component id="jPanel10" alignment="0" pref="566" max="32767" attributes="0"/>
+                      <Component id="jPanel11" alignment="0" pref="566" max="32767" attributes="0"/>
+                      <Component id="jPanel4" pref="566" max="32767" attributes="0"/>
                       <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jPanel13" alignment="0" pref="554" max="32767" attributes="0"/>
+                      <Component id="jPanel13" alignment="0" pref="566" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -405,7 +405,7 @@
                   <Component id="jlblNetAmt" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -705,6 +705,7 @@
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtFinalAmtFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxtFinalAmtFocusLost"/>
+                <EventHandler event="componentMoved" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="jtxtFinalAmtComponentMoved"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtFinalAmtKeyPressed"/>
               </Events>
             </Component>
@@ -734,7 +735,7 @@
                   <Component id="jlblRemainingAmt" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -780,7 +781,7 @@
                   <Component id="jlblOtherPaid" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

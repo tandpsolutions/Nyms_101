@@ -369,6 +369,17 @@ public class AccountMaster extends javax.swing.JInternalFrame {
                     navLoad.setMessage("Invalid group name");
                     return false;
                 }
+                if (!lb.isBlank(jtxtSpeciality)) {
+                    if (lb.getSpecialityCD(jtxtSpeciality.getText(), "C").equalsIgnoreCase("") || lb.getSpecialityCD(jtxtSpeciality.getText(), "C").equalsIgnoreCase("0")) {
+                        jtxtSpeciality.requestFocusInWindow();
+                        navLoad.setMessage("Invalid Speciality");
+                        return false;
+                    }
+                } else {
+                    jtxtSpeciality.requestFocusInWindow();
+                    navLoad.setMessage("Invalid Speciality");
+                    return false;
+                }
 
                 if (!lb.isBlank(jtxtCity)) {
                     if (lb.getCityCd(jtxtCity.getText(), "C").equalsIgnoreCase("") || lb.getCityCd(jtxtCity.getText(), "C").equalsIgnoreCase("0")) {
@@ -376,7 +387,26 @@ public class AccountMaster extends javax.swing.JInternalFrame {
                         navLoad.setMessage("Invalid City");
                         return false;
                     }
+                } else {
+                    jtxtCity.requestFocusInWindow();
+                    navLoad.setMessage("Invalid City");
+                    return false;
                 }
+                
+                
+                if (!lb.isBlank(jtxtArea)) {
+                    if (lb.getAreaCd(jtxtArea.getText(), "C").equalsIgnoreCase("") || lb.getAreaCd(jtxtArea.getText(), "C").equalsIgnoreCase("0")) {
+                        jtxtArea.requestFocusInWindow();
+                        navLoad.setMessage("Invalid Area");
+                        return false;
+                    }
+                } else {
+                    jtxtArea.requestFocusInWindow();
+                    navLoad.setMessage("Invalid Area");
+                    return false;
+                }
+                
+                
                 if (!lb.isBlank(jtxtMobile)) {
                     if (jtxtMobile.getText().length() == 10) {
                         if (getMode().equalsIgnoreCase("N")) {
@@ -397,6 +427,10 @@ public class AccountMaster extends javax.swing.JInternalFrame {
                         jtxtMobile.requestFocusInWindow();
                         return false;
                     }
+                } else {
+                    jtxtMobile.requestFocusInWindow();
+                    navLoad.setMessage("Invalid Mobile No");
+                    return false;
                 }
                 return true;
             }

@@ -102,6 +102,7 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
         } else if (start.equalsIgnoreCase("PL")) {
             lb.setUserRightsToPanel1(navLoad, "211");
         }
+        setTable();
     }
 
     public OPDBillGeneration(String start, int mode) {
@@ -448,6 +449,7 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
                 dtm.setRowCount(0);
                 jlblOtherPaid.setText("0.00");
                 clearRow();
+                setTable();
             }
 
             @Override
@@ -579,119 +581,119 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
     }
 
     private void addJtextBox() {
-        jPanel4.removeAll();
-        jtxtItem.setVisible(false);
-        jtxtQty.setVisible(false);
-        jtxtRate.setVisible(false);
-        jtxtAmt.setVisible(false);
-        jtxtDiscAmt.setVisible(false);
-        jtxtFinalAmt.setVisible(false);
-        jtxtRefAlias.setVisible(false);
-        jtxtRefBy.setVisible(false);
-
-        jtxtItem.setBounds(0, 0, 20, 20);
-        jtxtItem.setVisible(true);
-        jPanel4.add(jtxtItem);
-
-        jtxtQty.setBounds(0, 0, 20, 20);
-        jtxtQty.setVisible(true);
-        jPanel4.add(jtxtQty);
-
-        jtxtRate.setBounds(0, 0, 20, 20);
-        jtxtRate.setVisible(true);
-        jPanel4.add(jtxtRate);
-
-        jtxtAmt.setBounds(0, 0, 20, 20);
-        jtxtAmt.setVisible(true);
-        jPanel4.add(jtxtAmt);
-
-        jtxtDiscAmt.setBounds(0, 0, 20, 20);
-        jtxtDiscAmt.setVisible(true);
-        jPanel4.add(jtxtDiscAmt);
-
-        jtxtFinalAmt.setBounds(0, 0, 20, 20);
-        jtxtFinalAmt.setVisible(true);
-        jPanel4.add(jtxtFinalAmt);
-
-        jtxtRefBy.setBounds(0, 0, 20, 20);
-        jtxtRefBy.setVisible(true);
-        jPanel4.add(jtxtRefBy);
+//        jPanel4.removeAll();
+//        jtxtItem.setVisible(false);
+//        jtxtQty.setVisible(false);
+//        jtxtRate.setVisible(false);
+//        jtxtAmt.setVisible(false);
+//        jtxtDiscAmt.setVisible(false);
+//        jtxtFinalAmt.setVisible(false);
+//        jtxtRefAlias.setVisible(false);
+//        jtxtRefBy.setVisible(false);
+//
+//        jtxtItem.setBounds(0, 0, 20, 20);
+//        jtxtItem.setVisible(true);
+//        jPanel4.add(jtxtItem);
+//
+//        jtxtQty.setBounds(0, 0, 20, 20);
+//        jtxtQty.setVisible(true);
+//        jPanel4.add(jtxtQty);
+//
+//        jtxtRate.setBounds(0, 0, 20, 20);
+//        jtxtRate.setVisible(true);
+//        jPanel4.add(jtxtRate);
+//
+//        jtxtAmt.setBounds(0, 0, 20, 20);
+//        jtxtAmt.setVisible(true);
+//        jPanel4.add(jtxtAmt);
+//
+//        jtxtDiscAmt.setBounds(0, 0, 20, 20);
+//        jtxtDiscAmt.setVisible(true);
+//        jPanel4.add(jtxtDiscAmt);
+//
+//        jtxtFinalAmt.setBounds(0, 0, 20, 20);
+//        jtxtFinalAmt.setVisible(true);
+//        jPanel4.add(jtxtFinalAmt);
+//
+//        jtxtRefBy.setBounds(0, 0, 20, 20);
+//        jtxtRefBy.setVisible(true);
+//        jPanel4.add(jtxtRefBy);
 
         setTable();
     }
 
     private void addJlabel() {
-        jPanel5.removeAll();
-        jlblTotal.setVisible(false);
-        jLabel9.setVisible(false);
-
-        jlblTotal.setBounds(0, 0, 20, 20);
-        jlblTotal.setVisible(true);
-        jPanel5.add(jlblTotal);
-
-        jLabel9.setBounds(0, 0, 20, 20);
-        jLabel9.setVisible(true);
-        jPanel5.add(jLabel9);
+//        jPanel5.removeAll();
+//        jlblTotal.setVisible(false);
+//        jLabel9.setVisible(false);
+//
+//        jlblTotal.setBounds(0, 0, 20, 20);
+//        jlblTotal.setVisible(true);
+//        jPanel5.add(jlblTotal);
+//
+//        jLabel9.setBounds(0, 0, 20, 20);
+//        jLabel9.setVisible(true);
+//        jPanel5.add(jLabel9);
         setTable();
     }
 
     private void addJlabelNetAmt() {
-        jPanel9.removeAll();
-        jlblNetAmt.setVisible(false);
-        jLabel10.setVisible(false);
-
-        jlblNetAmt.setBounds(0, 0, 20, 20);
-        jlblNetAmt.setVisible(true);
-        jPanel9.add(jlblNetAmt);
-
-        jLabel10.setBounds(0, 0, 20, 20);
-        jLabel10.setVisible(true);
-        jPanel9.add(jLabel10);
+//        jPanel9.removeAll();
+//        jlblNetAmt.setVisible(false);
+//        jLabel10.setVisible(false);
+//
+//        jlblNetAmt.setBounds(0, 0, 20, 20);
+//        jlblNetAmt.setVisible(true);
+//        jPanel9.add(jlblNetAmt);
+//
+//        jLabel10.setBounds(0, 0, 20, 20);
+//        jLabel10.setVisible(true);
+//        jPanel9.add(jLabel10);
         setTable();
     }
 
     private void addJlabelOtherPaid() {
-        jPanel13.removeAll();
-        jlblOtherPaid.setVisible(false);
-        jLabel15.setVisible(false);
-
-        jlblOtherPaid.setBounds(0, 0, 20, 20);
-        jlblOtherPaid.setVisible(true);
-        jPanel13.add(jlblOtherPaid);
-
-        jLabel15.setBounds(0, 0, 20, 20);
-        jLabel15.setVisible(true);
-        jPanel13.add(jLabel15);
+//        jPanel13.removeAll();
+//        jlblOtherPaid.setVisible(false);
+//        jLabel15.setVisible(false);
+//
+//        jlblOtherPaid.setBounds(0, 0, 20, 20);
+//        jlblOtherPaid.setVisible(true);
+//        jPanel13.add(jlblOtherPaid);
+//
+//        jLabel15.setBounds(0, 0, 20, 20);
+//        jLabel15.setVisible(true);
+//        jPanel13.add(jLabel15);
         setTable();
     }
 
     private void addJlabelAdvanceAmt() {
-        jPanel10.removeAll();
-        jLabel11.setVisible(false);
-        jtxtPaidAmt.setVisible(false);
-
-        jLabel11.setBounds(0, 0, 20, 20);
-        jLabel11.setVisible(true);
-        jPanel10.add(jLabel11);
-
-        jtxtPaidAmt.setBounds(0, 0, 20, 20);
-        jtxtPaidAmt.setVisible(true);
-        jPanel10.add(jtxtPaidAmt);
+//        jPanel10.removeAll();
+//        jLabel11.setVisible(false);
+//        jtxtPaidAmt.setVisible(false);
+//
+//        jLabel11.setBounds(0, 0, 20, 20);
+//        jLabel11.setVisible(true);
+//        jPanel10.add(jLabel11);
+//
+//        jtxtPaidAmt.setBounds(0, 0, 20, 20);
+//        jtxtPaidAmt.setVisible(true);
+//        jPanel10.add(jtxtPaidAmt);
         setTable();
     }
 
     private void addJlabelRemainingAmt() {
-        jPanel11.removeAll();
-        jLabel12.setVisible(false);
-        jlblRemainingAmt.setVisible(false);
-
-        jLabel12.setBounds(0, 0, 20, 20);
-        jLabel12.setVisible(true);
-        jPanel11.add(jLabel12);
-
-        jlblRemainingAmt.setBounds(0, 0, 20, 20);
-        jlblRemainingAmt.setVisible(true);
-        jPanel11.add(jlblRemainingAmt);
+//        jPanel11.removeAll();
+//        jLabel12.setVisible(false);
+//        jlblRemainingAmt.setVisible(false);
+//
+//        jLabel12.setBounds(0, 0, 20, 20);
+//        jLabel12.setVisible(true);
+//        jPanel11.add(jLabel12);
+//
+//        jlblRemainingAmt.setBounds(0, 0, 20, 20);
+//        jlblRemainingAmt.setVisible(true);
+//        jPanel11.add(jlblRemainingAmt);
         setTable();
     }
 
@@ -1007,7 +1009,7 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
             .addComponent(jlblNetAmt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jLabel10)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         jPanel5.setPreferredSize(new java.awt.Dimension(177, 30));
@@ -1225,6 +1227,11 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
                 jtxtFinalAmtFocusLost(evt);
             }
         });
+        jtxtFinalAmt.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                jtxtFinalAmtComponentMoved(evt);
+            }
+        });
         jtxtFinalAmt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jtxtFinalAmtKeyPressed(evt);
@@ -1292,7 +1299,7 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
             .addComponent(jlblRemainingAmt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addComponent(jLabel12)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         jPanel13.setPreferredSize(new java.awt.Dimension(177, 30));
@@ -1317,7 +1324,7 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
             .addComponent(jlblOtherPaid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addComponent(jLabel15)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1327,13 +1334,13 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE))
+                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -1911,6 +1918,11 @@ public class OPDBillGeneration extends javax.swing.JInternalFrame {
         d.setLocation((screenSize.width - d.getWidth()) / 2, (screenSize.height - d.getHeight()) / 2);
         d.setVisible(true);
     }//GEN-LAST:event_jbtnPrevVouActionPerformed
+
+    private void jtxtFinalAmtComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jtxtFinalAmtComponentMoved
+        // TODO add your handling code here:
+        setTable();
+    }//GEN-LAST:event_jtxtFinalAmtComponentMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

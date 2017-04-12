@@ -136,7 +136,7 @@ public class IndorPatientList extends javax.swing.JInternalFrame {
             int row = jTable2.getSelectedRow();
             if (row != -1) {
                 opd_no = jTable2.getValueAt(row, 2).toString();
-                pm.jlblRefOPDNo.setText(opd_no);
+//                pm.jlblRefOPDNo.setText(opd_no);
                 this.dispose();
             }
         }

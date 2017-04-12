@@ -97,8 +97,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
         jlblUserName.setText(text);
         jlblEditNo.setText(text);
         jlblLstUpdate.setText(text);
-        jlblRefOPDNo.setText(text);
-        jcmbBlood1.setSelectedIndex(0);
         jtxtMonth.setText(text);
         jtxtDays.setText(text);
         jtxtYear.setText(text);
@@ -173,12 +171,8 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                             pstLocal.setString(7, lb.getAcCode(jtxtRefAlias.getText(), "AC"));
                             pstLocal.setString(8, lb.getAcCode(jtxtConsAlias.getText(), "AC"));
                             pstLocal.setInt(9, HMSHome.user_id);
-                            pstLocal.setInt(10, jcmbBlood1.getSelectedIndex());
-                            if (jcmbBlood1.getSelectedIndex() == 0) {
-                                pstLocal.setString(11, "");
-                            } else {
-                                pstLocal.setString(11, jlblRefOPDNo.getText());
-                            }
+                            pstLocal.setString(11, "");
+
                             rec_no = ((int) (lb.isNumber(lb.getData("select max(rec_no) from patientmst"))) + 1) + "";
                             pstLocal.setString(12, rec_no);
                             pstLocal.setString(13, opd_no);
@@ -381,12 +375,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
 //                        return false;
 //                    }
 //                }
-                if (jcmbBlood1.getSelectedIndex() == 1) {
-                    if (jlblRefOPDNo.getText().equalsIgnoreCase("")) {
-                        navLoad.setMessage("Please select indoor patient");
-                        return false;
-                    }
-                }
                 return true;
             }
 
@@ -394,8 +382,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
             public void setComponentTextFromResultSet() {
                 try {
                     setMessage("");
-                    jlblRefOPDNo.setText("");
-                    jcmbBlood1.setSelectedIndex(0);
                     rec_no = viewData.getString("rec_no");
                     opd_no = viewData.getString("opd_no");
                     jtxtAcAlias.setText(viewData.getString("opd_no"));
@@ -423,8 +409,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                     jlblEditNo.setText(viewData.getString("edit_no"));
                     jlblLstUpdate.setText(viewData.getString("time_stamp"));
                     jlblUserName.setText(lb.getUserName(viewData.getString("user_id"), "N"));
-                    jcmbBlood1.setSelectedIndex(viewData.getInt("is_mother"));
-                    jlblRefOPDNo.setText(viewData.getString("ref_opd_no"));
 
                 } catch (Exception ex) {
                     lb.printToLogFile("Exception at setComponentTextFromResultSet", ex);
@@ -457,13 +441,9 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                 jtxtConsAlias.setEnabled(false);
                 jtxtAddress.setEnabled(flag);
                 jButton1.setEnabled(flag);
-                jcmbBlood1.setEnabled(flag);
                 jtxtDays.setEnabled(flag);
                 jtxtMonth.setEnabled(flag);
                 jtxtYear.setEnabled(flag);
-                if (flag) {
-                    jcmbBlood1ItemStateChanged(null);
-                }
             }
         }
         navLoad = new navPanel();
@@ -538,9 +518,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
         jLabel19 = new javax.swing.JLabel();
         jtxtConsBy = new javax.swing.JTextField();
         jtxtConsAlias = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        jcmbBlood1 = new javax.swing.JComboBox();
-        jlblRefOPDNo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         jtxtYear = new javax.swing.JTextField();
@@ -712,22 +689,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel20.setText("Is Mother");
-
-        jcmbBlood1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No", "Yes" }));
-        jcmbBlood1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jcmbBlood1ItemStateChanged(evt);
-            }
-        });
-        jcmbBlood1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jcmbBlood1KeyPressed(evt);
-            }
-        });
-
-        jlblRefOPDNo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         jButton1.setText("Indoor Patient List");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -829,16 +790,10 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcmbBlood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcmbBlood1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jcmbBlood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jtxtRefAlias, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jlblRefOPDNo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(139, 139, 139)
                                 .addComponent(jButton1))
                             .addComponent(jtxtConsAlias, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -849,7 +804,7 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtxtDays, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 22, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -886,13 +841,10 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                     .addComponent(jLabel16)
                     .addComponent(jcmbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
-                    .addComponent(jcmbBlood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20)
-                    .addComponent(jcmbBlood1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcmbBlood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(jlblRefOPDNo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtRefAlias, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtRefBy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -922,10 +874,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel3, jtxtRefAlias, jtxtRefBy});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel19, jtxtConsAlias, jtxtConsBy});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel20, jcmbBlood1});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jlblRefOPDNo});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel21, jLabel22, jLabel23, jtxtDays, jtxtMonth, jtxtYear});
 
@@ -1583,7 +1531,7 @@ public class PatientMaster extends javax.swing.JInternalFrame {
 
     private void jcmbBloodKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jcmbBloodKeyPressed
         // TODO add your handling code here:
-        lb.enterFocus(evt, jcmbBlood1);
+        lb.enterFocus(evt, jtxtFstVstDate);
     }//GEN-LAST:event_jcmbBloodKeyPressed
 
     private void jtxtAddressKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtAddressKeyPressed
@@ -1614,20 +1562,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         lb.onlyInteger(evt, 6);
     }//GEN-LAST:event_jtxtPincodeKeyTyped
-
-    private void jcmbBlood1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jcmbBlood1KeyPressed
-        // TODO add your handling code here:
-        lb.enterFocus(evt, jtxtFstVstDate);
-    }//GEN-LAST:event_jcmbBlood1KeyPressed
-
-    private void jcmbBlood1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcmbBlood1ItemStateChanged
-        // TODO add your handling code here:
-        if (jcmbBlood1.getSelectedIndex() == 0) {
-            jButton1.setEnabled(false);
-        } else {
-            jButton1.setEnabled(true);
-        }
-    }//GEN-LAST:event_jcmbBlood1ItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -1714,7 +1648,6 @@ public class PatientMaster extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1732,12 +1665,10 @@ public class PatientMaster extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox jcmbBlood;
-    private javax.swing.JComboBox jcmbBlood1;
     private javax.swing.JComboBox jcmbSex;
     private javax.swing.JComboBox jcmbStatus;
     private javax.swing.JLabel jlblEditNo;
     private javax.swing.JLabel jlblLstUpdate;
-    public javax.swing.JLabel jlblRefOPDNo;
     private javax.swing.JLabel jlblUserName;
     private javax.swing.JPanel jpanelNavigation;
     private javax.swing.JTextField jtxtAcAlias;

@@ -290,8 +290,7 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
                     + " LEFT JOIN patientinfomst p1 ON p.opd_no=p1.opd_no LEFT JOIN billitemmst b ON i1.bill_item_cd=b.bill_item_cd"
                     + " LEFT JOIN acntmst a ON i.doc_cd=a.ac_cd LEFT JOIN billgrpmst b1 ON b.bill_grp_cd=b1.bill_grp_cd"
                     + " LEFT JOIN branchmst b2 ON b2.BRANCH_CD=1"
-                    + " WHERE i1.is_del=0 and (i.ipd_no='" + ref_no + "' OR i.ipd_no in (SELECT ipd_no FROM ipdreg WHERE ipd_no >= '" + ref_no + "' AND "
-                    + " opd_no in(SELECT opd_no FROM patientmst WHERE ref_opd_no='" + opd_no + "'))) GROUP BY i1.bill_item_cd,i1.rate "
+                    + " WHERE i1.is_del=0 and i.ipd_no='" + ref_no + "' GROUP BY i1.bill_item_cd,i1.rate "
                     + " order by b1.is_show,b1.bill_group_name";
             PreparedStatement pstLocal = dataConnecrtion.prepareStatement(sql);
             ResultSet rsLocal = pstLocal.executeQuery();
