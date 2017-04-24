@@ -2,9 +2,10 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDBill" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="b27a7218-63dc-4c48-9c4e-9ee498e35dba">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="25"/>
+	<property name="ireport.y" value="13"/>
 	<parameter name="words" class="java.lang.String"/>
 	<parameter name="type" class="java.lang.String"/>
+	<parameter name="dir1" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT o1.ipd_no,o.ref_no,o.v_date,o1.opd_no,p.pt_name,CASE WHEN p.sex = 0 THEN 'Male' ELSE 'Female' END AS sex
                      ,DATEDIFF(CURDATE(),dob) / 365 AS age,ac_name,o.amount,b1.BRANCH_NAME,
@@ -69,88 +70,92 @@
 	<title>
 		<band height="119" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="24" width="555" height="34" uuid="95d016b5-bc25-4bac-8313-acebabb4de47"/>
-				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Lucida Sans Typewriter" size="24" isBold="false" isItalic="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{BRANCH_NAME}]]></textFieldExpression>
-			</textField>
-			<textField pattern="">
-				<reportElement x="0" y="58" width="555" height="20" uuid="65787d7e-64cf-4fef-89ae-c881a3887c67"/>
-				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Lucida Sans Typewriter" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ADDRESS1}+","+$F{ADDRESS2}+","+$F{ADDRESS3}+" / P :"+$F{MOBILE}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="78" width="555" height="20" uuid="0ba23fa4-d53f-4883-a37a-1d8a9cf1c1ef"/>
-				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Lucida Sans Typewriter" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA["email id : "+$F{EMAIL}+" / CIN :"+$F{TIN_NO}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="0" width="555" height="24" uuid="7b018f08-edb7-468b-92b2-44c9599a7407"/>
-				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font fontName="Lucida Sans Typewriter" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{CMPN_NAME}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="98" width="555" height="20" uuid="85791538-e36e-467d-8940-e2de7b25182d"/>
+				<reportElement uuid="85791538-e36e-467d-8940-e2de7b25182d" x="0" y="98" width="555" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom" markup="none">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{type}]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement uuid="7b018f08-edb7-468b-92b2-44c9599a7407" x="125" y="2" width="429" height="24"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CMPN_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0ba23fa4-d53f-4883-a37a-1d8a9cf1c1ef" x="125" y="56" width="429" height="42"/>
+				<box topPadding="0"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["email id : "+$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="65787d7e-64cf-4fef-89ae-c881a3887c67" x="125" y="26" width="429" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Sans Typewriter" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS1}+","+$F{ADDRESS2}+","+$F{ADDRESS3}+" / P :"+$F{MOBILE}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="a3c922a0-6398-4240-a5b5-26b9de281f1c" x="-1" y="2" width="126" height="116"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<imageExpression><![CDATA[$P{dir1}+File.separatorChar + "Resources" + File.separatorChar+"Images"+File.separatorChar+"logo.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="51" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="110" height="15" uuid="c733dbe9-9221-48d2-aade-30f9cecd77f0"/>
+				<reportElement uuid="c733dbe9-9221-48d2-aade-30f9cecd77f0" x="0" y="0" width="110" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Receipt No.]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="126" y="0" width="100" height="15" uuid="f6e9a9ee-6ceb-40ca-8e2b-f2f41fe42fbd"/>
+				<reportElement uuid="f6e9a9ee-6ceb-40ca-8e2b-f2f41fe42fbd" x="126" y="0" width="100" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ref_no}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="111" y="0" width="15" height="15" uuid="71ee8fe9-cf59-4790-ad0d-57a8620e5848"/>
+				<reportElement uuid="71ee8fe9-cf59-4790-ad0d-57a8620e5848" x="111" y="0" width="15" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Comic Sans MS" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="438" y="0" width="117" height="15" uuid="d457b258-756d-4fbb-9d75-31b1a9199702"/>
+				<reportElement uuid="d457b258-756d-4fbb-9d75-31b1a9199702" x="438" y="0" width="117" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{v_date}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="433" y="0" width="5" height="15" uuid="157ebf87-0056-4cd6-b99e-696d834e6554"/>
+				<reportElement uuid="157ebf87-0056-4cd6-b99e-696d834e6554" x="433" y="0" width="5" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="370" y="0" width="63" height="15" uuid="9ff8e1b7-fda1-4d6f-a212-29b46b004606"/>
+				<reportElement uuid="9ff8e1b7-fda1-4d6f-a212-29b46b004606" x="370" y="0" width="63" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Date]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="30" width="110" height="15" uuid="021b319e-dc3c-412b-84c4-1117464bb816"/>
+				<reportElement uuid="021b319e-dc3c-412b-84c4-1117464bb816" x="0" y="30" width="110" height="15"/>
 				<box>
 					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
 				</box>
@@ -160,7 +165,7 @@
 				<text><![CDATA[Patient Name]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="125" y="30" width="245" height="15" uuid="11571674-d564-40f0-8b35-e61a35e3f825"/>
+				<reportElement uuid="11571674-d564-40f0-8b35-e61a35e3f825" x="125" y="30" width="245" height="15"/>
 				<box>
 					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
 				</box>
@@ -170,7 +175,7 @@
 				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="110" y="30" width="15" height="15" uuid="4d6ef651-c09d-4d71-b86a-367e904904b2"/>
+				<reportElement uuid="4d6ef651-c09d-4d71-b86a-367e904904b2" x="110" y="30" width="15" height="15"/>
 				<box>
 					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
 				</box>
@@ -180,42 +185,42 @@
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="370" y="15" width="63" height="15" uuid="7a4c8fe9-c91a-46bb-91d7-de74c829f530"/>
+				<reportElement uuid="7a4c8fe9-c91a-46bb-91d7-de74c829f530" x="370" y="15" width="63" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[OPD CASE NO.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="433" y="15" width="5" height="15" uuid="cec08db4-567d-40f8-a3e7-5413cfb1ba10"/>
+				<reportElement uuid="cec08db4-567d-40f8-a3e7-5413cfb1ba10" x="433" y="15" width="5" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="438" y="15" width="117" height="15" uuid="e90df3c7-3a1b-4b3d-8e2f-b1f4be2d03e6"/>
+				<reportElement uuid="e90df3c7-3a1b-4b3d-8e2f-b1f4be2d03e6" x="438" y="15" width="117" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{opd_no}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="15" width="110" height="15" uuid="9f127a71-4f16-49b2-93ea-c3e6d9d69a6e"/>
+				<reportElement uuid="9f127a71-4f16-49b2-93ea-c3e6d9d69a6e" x="0" y="15" width="110" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[IPD. No]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="126" y="15" width="100" height="15" uuid="27b3a550-efa7-4e9b-bce8-715e23db382d"/>
+				<reportElement uuid="27b3a550-efa7-4e9b-bce8-715e23db382d" x="126" y="15" width="100" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ipd_no}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="111" y="15" width="15" height="15" uuid="753bff19-de49-454c-9baf-46b7a5ffd39d"/>
+				<reportElement uuid="753bff19-de49-454c-9baf-46b7a5ffd39d" x="111" y="15" width="15" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Courier New" size="10" isBold="false"/>
 				</textElement>
@@ -226,14 +231,14 @@
 	<detail>
 		<band height="57" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="380" height="20" uuid="1e88989e-efb3-48f7-aee9-b83ec301089f"/>
+				<reportElement uuid="1e88989e-efb3-48f7-aee9-b83ec301089f" x="0" y="0" width="380" height="20"/>
 				<textElement verticalAlignment="Bottom" markup="html">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Received with thanks sum of Rs. <b>"+$F{amount}+"</b>"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="20" width="380" height="20" uuid="14bab18e-3f3a-46a9-8927-09755e578522"/>
+				<reportElement uuid="14bab18e-3f3a-46a9-8927-09755e578522" x="0" y="20" width="380" height="20"/>
 				<textElement verticalAlignment="Bottom" markup="html">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>
@@ -244,7 +249,7 @@
 	<columnFooter>
 		<band height="86">
 			<textField>
-				<reportElement x="0" y="0" width="288" height="20" uuid="4afc1739-1d74-44f8-9696-489025dc205b"/>
+				<reportElement uuid="4afc1739-1d74-44f8-9696-489025dc205b" x="0" y="0" width="288" height="20"/>
 				<box>
 					<topPen lineWidth="0.5" lineStyle="Dashed"/>
 				</box>
@@ -254,7 +259,7 @@
 				<textFieldExpression><![CDATA["Rs. "+$P{words}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="288" y="20" width="267" height="13" uuid="2fa9fc5a-9bc4-41a8-be40-07eb237ed98a"/>
+				<reportElement uuid="2fa9fc5a-9bc4-41a8-be40-07eb237ed98a" x="288" y="20" width="267" height="13"/>
 				<box topPadding="0"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
@@ -262,7 +267,7 @@
 				<textFieldExpression><![CDATA["For, "+$F{CMPN_NAME}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="393" y="72" width="162" height="14" uuid="5babece4-9f92-4d60-995b-a0a9ced2ab1c"/>
+				<reportElement uuid="5babece4-9f92-4d60-995b-a0a9ced2ab1c" x="393" y="72" width="162" height="14"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12"/>
 				</textElement>

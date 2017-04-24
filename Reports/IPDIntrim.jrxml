@@ -105,6 +105,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 	<field name="age1" class="java.lang.Double"/>
 	<field name="bill_grp_cd" class="java.lang.Integer"/>
 	<field name="head_dr" class="java.lang.String"/>
+	<field name="admit_time" class="java.lang.String"/>
 	<variable name="final_amt_1" class="java.lang.Double" calculation="Sum">
 		<variableExpression><![CDATA[$F{final_amt}]]></variableExpression>
 	</variable>
@@ -116,7 +117,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 		<groupHeader>
 			<band height="20">
 				<textField>
-					<reportElement x="0" y="0" width="554" height="20" uuid="b5b08483-adf1-4825-b743-a251899c564f"/>
+					<reportElement uuid="b5b08483-adf1-4825-b743-a251899c564f" x="0" y="0" width="554" height="20"/>
 					<box leftPadding="10">
 						<leftPen lineWidth="0.5"/>
 						<rightPen lineWidth="0.5"/>
@@ -131,7 +132,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 		<groupFooter>
 			<band height="20">
 				<textField>
-					<reportElement x="0" y="0" width="554" height="20" uuid="17826e69-cee4-4fb4-b212-0ab07e2c9dc7"/>
+					<reportElement uuid="17826e69-cee4-4fb4-b212-0ab07e2c9dc7" x="0" y="0" width="554" height="20"/>
 					<box rightPadding="5">
 						<leftPen lineWidth="0.5"/>
 						<rightPen lineWidth="0.5"/>
@@ -143,51 +144,51 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 		</groupFooter>
 	</group>
 	<title>
-		<band height="60" splitType="Stretch">
+		<band height="75" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="111" height="15" uuid="021b319e-dc3c-412b-84c4-1117464bb816"/>
+				<reportElement uuid="021b319e-dc3c-412b-84c4-1117464bb816" x="0" y="0" width="111" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Patient Name]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="126" y="0" width="210" height="15" uuid="11571674-d564-40f0-8b35-e61a35e3f825"/>
+				<reportElement uuid="11571674-d564-40f0-8b35-e61a35e3f825" x="126" y="0" width="210" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="111" y="0" width="15" height="15" uuid="4d6ef651-c09d-4d71-b86a-367e904904b2"/>
+				<reportElement uuid="4d6ef651-c09d-4d71-b86a-367e904904b2" x="111" y="0" width="15" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Courier New" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="337" y="0" width="74" height="15" uuid="c1ef3bef-5b37-440f-b427-52a68fbd1af6"/>
+				<reportElement uuid="c1ef3bef-5b37-440f-b427-52a68fbd1af6" x="337" y="0" width="74" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Sex / Age]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="411" y="0" width="5" height="15" uuid="cfa53501-828a-4b0b-a807-4f3f717ff920"/>
+				<reportElement uuid="cfa53501-828a-4b0b-a807-4f3f717ff920" x="411" y="0" width="5" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="416" y="0" width="138" height="15" uuid="a52cd5b3-a882-4364-ba91-816faf389dad"/>
+				<reportElement uuid="a52cd5b3-a882-4364-ba91-816faf389dad" x="416" y="0" width="138" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[(($F{sex} == 0)?"Male" : "Female")+" / "+($F{age}+"").subSequence(0,($F{age}+"").indexOf("."))+" Years "+((($F{age}-$F{age1})*365)+"").subSequence(0,((($F{age}-$F{age1})*365)+"").indexOf("."))+ " Days"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="126" y="15" width="429" height="15" uuid="e5580b8c-d7be-4032-ad90-285a82f1ac16"/>
+				<reportElement uuid="e5580b8c-d7be-4032-ad90-285a82f1ac16" x="126" y="15" width="429" height="15"/>
 				<box>
 					<bottomPen lineWidth="0.5"/>
 				</box>
@@ -197,7 +198,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textFieldExpression><![CDATA[$F{address}.replaceAll( "\n", " " )]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="111" y="15" width="15" height="15" uuid="88d9ed54-be6a-4c29-93f6-1dec5b7d7924"/>
+				<reportElement uuid="88d9ed54-be6a-4c29-93f6-1dec5b7d7924" x="111" y="15" width="15" height="15"/>
 				<box>
 					<bottomPen lineWidth="0.5"/>
 				</box>
@@ -207,7 +208,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="15" width="111" height="15" uuid="9884f8c7-07f5-4604-b8da-5dbd40cf5c18"/>
+				<reportElement uuid="9884f8c7-07f5-4604-b8da-5dbd40cf5c18" x="0" y="15" width="111" height="15"/>
 				<box>
 					<bottomPen lineWidth="0.5"/>
 				</box>
@@ -217,53 +218,74 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<text><![CDATA[Address]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="30" width="111" height="15" uuid="c6bf5ddb-fce8-4cb6-b26c-92b288f00f02"/>
+				<reportElement uuid="c6bf5ddb-fce8-4cb6-b26c-92b288f00f02" x="0" y="30" width="111" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Adm. Doctor]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="126" y="30" width="429" height="15" uuid="8330c626-0448-4ed3-86c5-a46927483ce9"/>
+				<reportElement uuid="8330c626-0448-4ed3-86c5-a46927483ce9" x="126" y="30" width="429" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{head_dr}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="111" y="30" width="15" height="15" uuid="e7958f98-cdb7-45ae-8fd3-df4777ab9114"/>
+				<reportElement uuid="e7958f98-cdb7-45ae-8fd3-df4777ab9114" x="111" y="30" width="15" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="Courier New" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="45" width="111" height="15" uuid="f2c632c9-8fa2-4f1c-9da6-827322d7202b"/>
+				<reportElement uuid="f2c632c9-8fa2-4f1c-9da6-827322d7202b" x="0" y="45" width="111" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[D.O.A]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="111" y="45" width="15" height="15" uuid="81be6bff-766c-4ab4-b715-7741ce1defd1"/>
+				<reportElement uuid="81be6bff-766c-4ab4-b715-7741ce1defd1" x="111" y="45" width="15" height="15"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="126" y="45" width="100" height="15" uuid="df24669e-8fd5-4394-9c5a-65e131149c45"/>
+				<reportElement uuid="df24669e-8fd5-4394-9c5a-65e131149c45" x="126" y="45" width="100" height="15"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{admit_date}]]></textFieldExpression>
 			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="df24669e-8fd5-4394-9c5a-65e131149c45" x="126" y="60" width="100" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admit_time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f2c632c9-8fa2-4f1c-9da6-827322d7202b" x="0" y="60" width="111" height="15"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Lucida Sans Typewriter" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[T.O.A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="81be6bff-766c-4ab4-b715-7741ce1defd1" x="111" y="60" width="15" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
 		</band>
 	</title>
 	<columnHeader>
 		<band height="20">
 			<staticText>
-				<reportElement x="0" y="0" width="257" height="20" uuid="c2dcab5e-ce7f-492c-a884-ca71a2c4a9a6"/>
+				<reportElement uuid="c2dcab5e-ce7f-492c-a884-ca71a2c4a9a6" x="0" y="0" width="257" height="20"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.5"/>
@@ -275,7 +297,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<text><![CDATA[Particular]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="257" y="0" width="46" height="20" uuid="e753df9c-a16d-4e9f-b4aa-fe1a8f43b6ed"/>
+				<reportElement uuid="e753df9c-a16d-4e9f-b4aa-fe1a8f43b6ed" x="257" y="0" width="46" height="20"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
@@ -286,7 +308,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<text><![CDATA[Unit]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="303" y="0" width="45" height="20" uuid="424adb5c-6e25-49f5-bb46-febab5b8767a"/>
+				<reportElement uuid="424adb5c-6e25-49f5-bb46-febab5b8767a" x="303" y="0" width="45" height="20"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
@@ -297,7 +319,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<text><![CDATA[Rate]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="348" y="0" width="63" height="20" uuid="543fd28d-6e68-4ff8-986a-edbc319013ec"/>
+				<reportElement uuid="543fd28d-6e68-4ff8-986a-edbc319013ec" x="348" y="0" width="63" height="20"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
@@ -308,7 +330,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<text><![CDATA[Amount]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="411" y="0" width="63" height="20" uuid="ffc83b2b-2c90-47d1-9d4d-1baa78df96c1"/>
+				<reportElement uuid="ffc83b2b-2c90-47d1-9d4d-1baa78df96c1" x="411" y="0" width="63" height="20"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
@@ -319,7 +341,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<text><![CDATA[Discount]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="474" y="0" width="80" height="20" uuid="8f7ddfea-d336-4f4a-8acb-f7d174f6b938"/>
+				<reportElement uuid="8f7ddfea-d336-4f4a-8acb-f7d174f6b938" x="474" y="0" width="80" height="20"/>
 				<box leftPadding="5">
 					<topPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
@@ -335,7 +357,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="257" height="20" isRemoveLineWhenBlank="true" uuid="500e8348-0b21-4757-8ee0-d57b378e3e9a">
+				<reportElement uuid="500e8348-0b21-4757-8ee0-d57b378e3e9a" x="0" y="0" width="257" height="20" isRemoveLineWhenBlank="true">
 					<printWhenExpression><![CDATA[$F{bill_grp_cd}!=21]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="15">
@@ -345,7 +367,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textFieldExpression><![CDATA[$F{bill_item_name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="257" y="0" width="30" height="20" uuid="ef1e9d00-861e-4e5b-8a54-eed8bbad8d99">
+				<reportElement uuid="ef1e9d00-861e-4e5b-8a54-eed8bbad8d99" x="257" y="0" width="30" height="20">
 					<printWhenExpression><![CDATA[$F{bill_grp_cd}!=21]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="5"/>
@@ -353,7 +375,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="303" y="0" width="45" height="20" uuid="cf622ef9-b69a-4c3d-ae17-f5cd4f1eba1b">
+				<reportElement uuid="cf622ef9-b69a-4c3d-ae17-f5cd4f1eba1b" x="303" y="0" width="45" height="20">
 					<printWhenExpression><![CDATA[$F{bill_grp_cd}!=21]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="0" rightPadding="5"/>
@@ -361,7 +383,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="348" y="0" width="63" height="20" uuid="093b1633-0dbb-4b85-9925-cebb5e1f644e">
+				<reportElement uuid="093b1633-0dbb-4b85-9925-cebb5e1f644e" x="348" y="0" width="63" height="20">
 					<printWhenExpression><![CDATA[$F{bill_grp_cd}!=21]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="0" rightPadding="5"/>
@@ -369,7 +391,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textFieldExpression><![CDATA[$F{amt}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="411" y="0" width="63" height="20" uuid="8db8b8ee-9d8b-4a7e-850b-0f7d206e650f">
+				<reportElement uuid="8db8b8ee-9d8b-4a7e-850b-0f7d206e650f" x="411" y="0" width="63" height="20">
 					<printWhenExpression><![CDATA[$F{bill_grp_cd}!=21]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="0" rightPadding="5"/>
@@ -377,7 +399,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textFieldExpression><![CDATA[$F{disc}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="474" y="0" width="80" height="20" uuid="a46b292d-4913-40b6-ac02-6795d1eb5a4a">
+				<reportElement uuid="a46b292d-4913-40b6-ac02-6795d1eb5a4a" x="474" y="0" width="80" height="20">
 					<printWhenExpression><![CDATA[$F{bill_grp_cd}!=21]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="0" rightPadding="5">
@@ -387,7 +409,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textFieldExpression><![CDATA[$F{final_amt}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="287" y="0" width="16" height="20" uuid="a77acceb-a45d-4e34-9d54-fa0c7ebc170a">
+				<reportElement uuid="a77acceb-a45d-4e34-9d54-fa0c7ebc170a" x="287" y="0" width="16" height="20">
 					<printWhenExpression><![CDATA[$F{bill_grp_cd}!=21]]></printWhenExpression>
 				</reportElement>
 				<box leftPadding="5"/>
@@ -402,7 +424,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 	<summary>
 		<band height="62">
 			<subreport>
-				<reportElement x="-20" y="-20" width="544" height="62" uuid="e818ff2a-a870-4169-acf1-abee3b600907"/>
+				<reportElement uuid="e818ff2a-a870-4169-acf1-abee3b600907" x="-20" y="-20" width="544" height="62"/>
 				<subreportParameter name="refund">
 					<subreportParameterExpression><![CDATA[$P{refund}]]></subreportParameterExpression>
 				</subreportParameter>
