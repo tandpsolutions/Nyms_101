@@ -171,6 +171,7 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                             pstLocal.setString(7, lb.getAcCode(jtxtRefAlias.getText(), "AC"));
                             pstLocal.setString(8, lb.getAcCode(jtxtConsAlias.getText(), "AC"));
                             pstLocal.setInt(9, HMSHome.user_id);
+                            pstLocal.setString(10, "0");
                             pstLocal.setString(11, "");
 
                             rec_no = ((int) (lb.isNumber(lb.getData("select max(rec_no) from patientmst"))) + 1) + "";

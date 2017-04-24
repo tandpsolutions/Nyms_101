@@ -296,7 +296,7 @@ public class IPDAdvanceReceipt extends javax.swing.JInternalFrame {
             @Override
             public void callPrint() {
                 if (mode == 1) {
-                    VoucherDisplay vd = new VoucherDisplay(ref_no, "Advanced");
+                    VoucherDisplay vd = new VoucherDisplay(ref_no, "Advance");
                     HMSHome.addOnScreen(vd, "Voucher Display", -1);
                 } else if (mode == -1) {
                     VoucherDisplay vd = new VoucherDisplay(ref_no, "Refund");

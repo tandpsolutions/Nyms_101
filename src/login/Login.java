@@ -65,6 +65,7 @@ public class Login extends javax.swing.JFrame {
                 properties.load(new FileReader(f));
                 ip = properties.getProperty("dbHost");
                 pwd = properties.getProperty("password");
+                database = properties.getProperty("database");
                 Class.forName("org.gjt.mm.mysql.Driver");
                 connMpAdmin = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + database + "?sessionVariables=sql_mode=''&user=" + username + "&password=" + pwd + "&autoReconnect=true");
 //                loadReport();

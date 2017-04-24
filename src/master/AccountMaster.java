@@ -370,7 +370,7 @@ public class AccountMaster extends javax.swing.JInternalFrame {
                     return false;
                 }
                 if (!lb.isBlank(jtxtSpeciality)) {
-                    if (lb.getSpecialityCD(jtxtSpeciality.getText(), "C").equalsIgnoreCase("") || lb.getSpecialityCD(jtxtSpeciality.getText(), "C").equalsIgnoreCase("0")) {
+                    if (lb.getSubSpecialistCd(jtxtSpeciality.getText(), "C").equalsIgnoreCase("") || lb.getSubSpecialistCd(jtxtSpeciality.getText(), "C").equalsIgnoreCase("0")) {
                         jtxtSpeciality.requestFocusInWindow();
                         navLoad.setMessage("Invalid Speciality");
                         return false;
@@ -392,21 +392,13 @@ public class AccountMaster extends javax.swing.JInternalFrame {
                     navLoad.setMessage("Invalid City");
                     return false;
                 }
-                
-                
-                if (!lb.isBlank(jtxtArea)) {
-                    if (lb.getAreaCd(jtxtArea.getText(), "C").equalsIgnoreCase("") || lb.getAreaCd(jtxtArea.getText(), "C").equalsIgnoreCase("0")) {
-                        jtxtArea.requestFocusInWindow();
-                        navLoad.setMessage("Invalid Area");
-                        return false;
-                    }
-                } else {
+
+                if (lb.isBlank(jtxtArea)) {
                     jtxtArea.requestFocusInWindow();
                     navLoad.setMessage("Invalid Area");
                     return false;
                 }
-                
-                
+
                 if (!lb.isBlank(jtxtMobile)) {
                     if (jtxtMobile.getText().length() == 10) {
                         if (getMode().equalsIgnoreCase("N")) {

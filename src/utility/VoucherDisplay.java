@@ -200,6 +200,7 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
             ResultSet rsLocal = pstLocal.executeQuery();
             params.put("type", type);
             params.put("words", new AmountInWords().convertToWords(Math.abs((int) lb.isNumber(lb.getData("amount", "ipdpaymenthd", "REF_NO", ref_no, 0)))));
+            params.put("dir1", HMS101.currentDirectory);
             if (mode == -1) {
                 if (type.equalsIgnoreCase("Advanced")) {
                     print = lb.reportGenerator("AdvancedRefund.jasper", params, rsLocal, jPanel1);
@@ -244,18 +245,17 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
         HashMap params = new HashMap();
         try {
             String opd_no = lb.getData("OPD_NO", "IPDREG", "IPD_NO", ref_no, 0);
-                String sql = "SELECT b1.bill_grp_cd,i.ref_no,i.dis_date,i.ipd_no,i.opd_no,p.pt_name,p.sex,floor((DATEDIFF(CURDATE(),p.dob)/365)) AS age1,"
-                    + " DATEDIFF(CURDATE(),p.dob) / 365 AS age,p1.address,"
-                    + " b.bill_item_name,SUM(i1.qty) AS qty,i1.rate AS rate,SUM(i1.amt) AS amt,a1.ac_name as treat,b.third_party, "
-                    + " SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name as head_dr,i.admit_date,b1.bill_group_name,b2.BRANCH_NAME,"
-                    + " i.disc_amt,i.paid_amt,b2.CMPN_NAME,b2.ADDRESS1,b2.ADDRESS2,b2.ADDRESS3,b2.MOBILE,b2.EMAIL,b2.TIN_NO"
-                    + " FROM ipdreg i LEFT JOIN ipdbilldt i1 ON i.ipd_no=i1.ipd_no LEFT JOIN patientmst p ON i.opd_no=p.opd_no"
-                    + " LEFT JOIN patientinfomst p1 ON p.opd_no=p1.opd_no LEFT JOIN billitemmst b ON i1.bill_item_cd=b.bill_item_cd"
-                    + " LEFT JOIN acntmst a ON i.doc_cd=a.ac_cd LEFT JOIN billgrpmst b1 ON b.bill_grp_cd=b1.bill_grp_cd"
-                    + " LEFT JOIN acntmst a1 ON i1.doc_cd=a1.ac_cd LEFT JOIN branchmst b2 ON b2.BRANCH_CD=1"
-                    + " WHERE i1.is_hidden=0 and i1.is_del=0 and (i.ipd_no='" + ref_no + "' OR i.ipd_no in(SELECT ipd_no FROM ipdreg WHERE ipd_no >= '" + ref_no + "' AND "
-                    + " opd_no in(SELECT opd_no FROM patientmst WHERE ref_opd_no='" + opd_no + "'))) GROUP BY i1.bill_item_cd,i1.rate "
-                    + " order by b1.is_show,b1.bill_group_name,i.opd_no,a1.ac_name";
+            String sql = "SELECT b1.bill_grp_cd,i.ref_no,i.dis_date,i.dis_time,i.ipd_no,i.opd_no,p.pt_name,p.sex,\n"
+                    + "floor((DATEDIFF(CURDATE(),p.dob)/365)) AS age1, DATEDIFF(CURDATE(),p.dob) / 365 AS age,p1.address, \n"
+                    + "b.bill_item_name,SUM(i1.qty) AS qty,i1.rate AS rate,SUM(i1.amt) AS amt,a1.ac_name as treat,b.third_party,\n"
+                    + "  SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name as head_dr,i.admit_date,i.admit_time,bill_group_name,\n"
+                    + "  b2.BRANCH_NAME, i.disc_amt,i.paid_amt,b2.CMPN_NAME,b2.ADDRESS1,b2.ADDRESS2,b2.ADDRESS3,b2.MOBILE,b2.EMAIL,b2.TIN_NO \n"
+                    + "  FROM ipdreg i LEFT JOIN ipdbilldt i1 ON i.ipd_no=i1.ipd_no LEFT JOIN patientmst p ON i.opd_no=p.opd_no \n"
+                    + "  LEFT JOIN patientinfomst p1 ON p.opd_no=p1.opd_no LEFT JOIN billitemmst b ON i1.bill_item_cd=b.bill_item_cd \n"
+                    + "  LEFT JOIN acntmst a ON i.doc_cd=a.ac_cd LEFT JOIN billgrpmst b1 ON b.bill_grp_cd=b1.bill_grp_cd\n"
+                    + "  LEFT JOIN acntmst a1 ON i1.doc_cd=a1.ac_cd LEFT JOIN branchmst b2 ON b2.BRANCH_CD=1 WHERE i1.is_hidden=0 \n"
+                    + "  and i1.is_del=0 and i.ipd_no='" + ref_no + "' GROUP BY i1.bill_item_cd,i1.rate,a1.ac_name \n"
+                    + "  order by b1.is_show,b1.bill_group_name,i.opd_no,a1.ac_name";
             PreparedStatement pstLocal = dataConnecrtion.prepareStatement(sql);
             ResultSet rsLocal = pstLocal.executeQuery();
             sql = "SELECT v_date,amount,ref_no FROM ipdpaymenthd WHERE ipd_no ='" + ref_no + "'";
@@ -265,6 +265,7 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
             params.put("words", new AmountInWords().convertToWords((int) lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ipd_no", ref_no, 0))));
             params.put("result", result);
             params.put("dir", HMS101.currentDirectory + File.separatorChar + "Reports" + File.separatorChar);
+            params.put("dir1", HMS101.currentDirectory);
             params.put("advance", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount > 0 and ipd_no", ref_no, 0)));
             params.put("refund", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount < 0 and ipd_no", ref_no, 0)));
             if (mode == -1) {
@@ -281,17 +282,17 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
         HashMap params = new HashMap();
         try {
             String opd_no = lb.getData("OPD_NO", "IPDREG", "IPD_NO", ref_no, 0);
-            String sql = "SELECT b1.bill_grp_cd,i.ref_no,i.dis_date,i.ipd_no,i.opd_no,p.pt_name,p.sex,floor((DATEDIFF(CURDATE(),p.dob)/365)) AS age1,"
-                    + " DATEDIFF(CURDATE(),p.dob) / 365 AS age,p1.address,"
-                    + " b.bill_item_name,SUM(i1.qty) AS qty,i1.rate AS rate,SUM(i1.amt) AS amt,"
-                    + " SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name as head_dr,i.admit_date,b1.bill_group_name,b2.BRANCH_NAME,"
-                    + " i.disc_amt,i.paid_amt,b2.CMPN_NAME,b2.ADDRESS1,b2.ADDRESS2,b2.ADDRESS3,b2.MOBILE,b2.EMAIL,b2.TIN_NO"
-                    + " FROM ipdreg i LEFT JOIN ipdbilldt i1 ON i.ipd_no=i1.ipd_no LEFT JOIN patientmst p ON i.opd_no=p.opd_no"
-                    + " LEFT JOIN patientinfomst p1 ON p.opd_no=p1.opd_no LEFT JOIN billitemmst b ON i1.bill_item_cd=b.bill_item_cd"
-                    + " LEFT JOIN acntmst a ON i.doc_cd=a.ac_cd LEFT JOIN billgrpmst b1 ON b.bill_grp_cd=b1.bill_grp_cd"
-                    + " LEFT JOIN branchmst b2 ON b2.BRANCH_CD=1"
-                    + " WHERE i1.is_del=0 and i.ipd_no='" + ref_no + "' GROUP BY i1.bill_item_cd,i1.rate "
-                    + " order by b1.is_show,b1.bill_group_name";
+            String sql = "SELECT b1.bill_grp_cd,i.ref_no,i.dis_date,i.dis_time,i.ipd_no,i.opd_no,p.pt_name,p.sex,\n"
+                    + "floor((DATEDIFF(CURDATE(),p.dob)/365)) AS age1, DATEDIFF(CURDATE(),p.dob) / 365 AS age,p1.address, \n"
+                    + "b.bill_item_name,SUM(i1.qty) AS qty,i1.rate AS rate,SUM(i1.amt) AS amt,a1.ac_name as treat,b.third_party,\n"
+                    + "  SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name as head_dr,i.admit_date,i.admit_time,bill_group_name,\n"
+                    + "  b2.BRANCH_NAME, i.disc_amt,i.paid_amt,b2.CMPN_NAME,b2.ADDRESS1,b2.ADDRESS2,b2.ADDRESS3,b2.MOBILE,b2.EMAIL,b2.TIN_NO \n"
+                    + "  FROM ipdreg i LEFT JOIN ipdbilldt i1 ON i.ipd_no=i1.ipd_no LEFT JOIN patientmst p ON i.opd_no=p.opd_no \n"
+                    + "  LEFT JOIN patientinfomst p1 ON p.opd_no=p1.opd_no LEFT JOIN billitemmst b ON i1.bill_item_cd=b.bill_item_cd \n"
+                    + "  LEFT JOIN acntmst a ON i.doc_cd=a.ac_cd LEFT JOIN billgrpmst b1 ON b.bill_grp_cd=b1.bill_grp_cd\n"
+                    + "  LEFT JOIN acntmst a1 ON i1.doc_cd=a1.ac_cd LEFT JOIN branchmst b2 ON b2.BRANCH_CD=1 WHERE i1.is_hidden=0 \n"
+                    + "  and i1.is_del=0 and i.ipd_no='" + ref_no + "' GROUP BY i1.bill_item_cd,i1.rate,a1.ac_name \n"
+                    + "  order by b1.is_show,b1.bill_group_name,i.opd_no,a1.ac_name";
             PreparedStatement pstLocal = dataConnecrtion.prepareStatement(sql);
             ResultSet rsLocal = pstLocal.executeQuery();
             sql = "SELECT v_date,amount,ref_no FROM ipdpaymenthd WHERE ipd_no ='" + ref_no + "'";
@@ -301,6 +302,7 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
             params.put("words", new AmountInWords().convertToWords((int) lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ipd_no", ref_no, 0))));
             params.put("result", result);
             params.put("dir", HMS101.currentDirectory + File.separatorChar + "Reports" + File.separatorChar);
+            params.put("dir1", HMS101.currentDirectory);
             params.put("advance", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount > 0 and ipd_no", ref_no, 0)));
             params.put("refund", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount < 0 and ipd_no", ref_no, 0)));
             if (mode == -1) {
