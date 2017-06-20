@@ -313,7 +313,8 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
             params.put("dir1", HMS101.currentDirectory);
             params.put("advance", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount > 0 and ipd_no", ref_no, 0)));
             params.put("refund", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount < 0 and ipd_no", ref_no, 0)));
-            params.put("service_charge", lb.isNumber(lb.getData("service_charge", "ipdreg", "ipd_no", ref_no, 0)));
+            String service_charge=lb.getData("select sum(final_amt*10/100)  from ipdbilldt i left join billitemmst b on i.bill_item_cd=b.bill_item_cd where ipd_no='" + ref_no + "' and b.service_charge=1");
+            params.put("service_charge", lb.isNumber(service_charge));
             if (mode == -1) {
                 print = lb.reportGenerator("IPDIntrim.jasper", params, rsLocal, jPanel1);
             } else {
