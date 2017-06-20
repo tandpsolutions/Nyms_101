@@ -50,6 +50,7 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
         jtxtPoint.setText(text);
         jtxtMinStkLevel.setText(text);
         jComboBox1.setSelectedIndex(0);
+        jComboBox2.setSelectedIndex(0);
     }
 
     private void setPIckListView() {
@@ -103,11 +104,11 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
                             String sql = "";
                             if (getMode().equalsIgnoreCase("N")) {
                                 sql = "insert into billitemmst (bill_item_name,bill_grp_cd,def_rate,user_id"
-                                        + ",third_party,point_charge,min_stk_level) values (?,?,?,?,?,?,?)";
+                                        + ",third_party,point_charge,min_stk_level,service_charge) values (?,?,?,?,?,?,?,?)";
                             } else if (getMode().equalsIgnoreCase("E")) {
                                 sql = "update billitemmst set bill_item_name=?,bill_grp_cd=?,def_rate=?,user_id=?,edit_no = edit_no+1,"
                                         + "time_stamp = current_timestamp,third_party=?,point_charge=?"
-                                        + ",min_stk_level=? where bill_item_cd=" + bill_item_cd;
+                                        + ",min_stk_level=?,service_charge=? where bill_item_cd=" + bill_item_cd;
                             }
                             PreparedStatement pstLocal = dataConnection.prepareStatement(sql);
                             pstLocal.setString(1, jtxtBillItemName.getText());
@@ -117,6 +118,7 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
                             pstLocal.setInt(5, jComboBox1.getSelectedIndex());
                             pstLocal.setDouble(6, lb.isNumber(jtxtPoint));
                             pstLocal.setDouble(7, lb.isNumber(jtxtMinStkLevel));
+                            pstLocal.setInt(8, jComboBox2.getSelectedIndex());
                             pstLocal.executeUpdate();
                             setSaveFlag(true);
                             if (getMode().equalsIgnoreCase("N")) {
@@ -262,6 +264,7 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
                     jlblLstUpdate.setText(viewData.getString("time_stamp"));
                     jlblUserName.setText(lb.getUserName(viewData.getString("user_id"), "N"));
                     jComboBox1.setSelectedIndex(viewData.getInt("third_party"));
+                    jComboBox2.setSelectedIndex(viewData.getInt("service_charge"));
                     jtxtPoint.setText(viewData.getString("point_charge"));
                     jtxtMinStkLevel.setText(viewData.getString("min_stk_level"));
                 } catch (Exception ex) {
@@ -275,6 +278,7 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
                 jtxtItemGrpName.setEnabled(flag);
                 jtxtDefaultRate.setEnabled(flag);
                 jComboBox1.setEnabled(flag);
+                jComboBox2.setEnabled(flag);
                 jtxtPoint.setEnabled(flag);
                 jtxtMinStkLevel.setEnabled(flag);
             }
@@ -338,6 +342,8 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
         jtxtPoint = new javax.swing.JTextField();
         jtxtMinStkLevel = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -482,6 +488,15 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Min Stock Level");
 
+        jLabel7.setText("Service Charge");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No", "Yes" }));
+        jComboBox2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jComboBox2KeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -496,7 +511,8 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -504,7 +520,8 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
                             .addComponent(jtxtItemGrpName, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtxtBillItemName, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtxtPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtMinStkLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jtxtMinStkLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(63, Short.MAX_VALUE))
@@ -539,7 +556,11 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -658,9 +679,14 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
         lb.enterFocus(evt, jComboBox1);
     }//GEN-LAST:event_jtxtMinStkLevelKeyPressed
 
+    private void jComboBox2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jComboBox2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2KeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -669,6 +695,7 @@ public class BillingItemMaster extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -63,6 +63,7 @@ import net.sf.jasperreports.engine.JRExporterParameter;
 import net.sf.jasperreports.engine.JRResultSetDataSource;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperPrintManager;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.engine.export.JRRtfExporter;
@@ -274,7 +275,8 @@ public class Library {
 
 // YEAR CALCULATION
         year = toDate.get(Calendar.YEAR) - (fromDate.get(Calendar.YEAR) + increment);
-        return year + " Years " + month + " Months " + day + " Days";
+//        return year + " Years " + month + " Months " + day + " Days";
+        return year + " Years ";
     }
 
     public String getBirthDateFromDifferenceInDDMMYYYY(int year, int month, int days) {
@@ -961,7 +963,6 @@ public class Library {
             print = JasperFillManager.fillReport(System.getProperty("user.dir") + File.separatorChar + "Reports" + File.separatorChar + fileName, params, dataSource);
             panelReport.removeAll();
             JRViewer jrViewer = new JRViewer(print);
-            ((JPanel) jrViewer.getComponent(0)).remove(1);
             jrViewer.setSize(panelReport.getWidth(), panelReport.getHeight());
             panelReport.add(jrViewer);
             SwingUtilities.updateComponentTreeUI(panelReport);
@@ -1065,25 +1066,12 @@ public class Library {
     }
 
     public JasperPrint reportGeneratorWord(String fileName, HashMap params, ResultSet dataList) {
+        JRResultSetDataSource dataSource = new JRResultSetDataSource(dataList);
         JasperPrint print = null;
 //        jScrollPane1.setVisible(false);
         try {
-            String printFileName = null;
-            JRResultSetDataSource beanColDataSource
-                    = new JRResultSetDataSource(dataList);
-            printFileName = JasperFillManager.fillReportToFile(System.getProperty("user.dir") + File.separatorChar + "Reports/" + fileName,
-                    params, beanColDataSource);
-            if (printFileName != null) {
-                JRPdfExporter exporter = new JRPdfExporter();
-                exporter.setParameter(JRExporterParameter.INPUT_FILE_NAME,
-                        printFileName);
-                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME,
-                        System.getProperty("user.dir") + File.separatorChar + fileName.replaceAll(".jasper", "") + ".pdf");
-                exporter.exportReport();
-
-                Desktop.getDesktop().print(new File(System.getProperty("user.dir") + File.separatorChar + fileName.replaceAll(".jasper", "") + ".pdf"));
-
-            }
+            print = JasperFillManager.fillReport(System.getProperty("user.dir") + File.separatorChar + "Reports" + File.separatorChar + fileName, params, dataSource);
+            JasperPrintManager.printReport(print, false);
         } catch (Exception ex) {
             printToLogFile("Exception at reportGenerator report", ex);
         }
@@ -1164,7 +1152,7 @@ public class Library {
             print = JasperFillManager.fillReport(System.getProperty("user.dir") + File.separatorChar + "Reports" + File.separatorChar + fileName, params, beanColDataSource);
             panelReport.removeAll();
             JRViewer jrViewer = new JRViewer(print);
-            ((JPanel) jrViewer.getComponent(0)).remove(0);
+//            ((JPanel) jrViewer.getComponent(0)).remove(0);
             jrViewer.setSize(panelReport.getWidth(), panelReport.getHeight());
             panelReport.add(jrViewer);
             SwingUtilities.updateComponentTreeUI(panelReport);
@@ -2068,6 +2056,8 @@ public class Library {
                 sql = "select bill_item_cd from billitemmst where bill_item_name='" + code + "'";
             } else if (tag.equalsIgnoreCase("N")) {
                 sql = "select bill_item_name from billitemmst where bill_item_cd=" + code;
+            } else if (tag.equalsIgnoreCase("CS")) {
+                sql = "select service_charge from billitemmst where bill_item_cd=" + code;
             }
             PreparedStatement pstLocal = dataConnection.prepareStatement(sql);
             ResultSet rsLocal = pstLocal.executeQuery();

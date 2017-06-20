@@ -63,7 +63,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         navLoad.callNew();
         jlblIPDNumber.setText(ipdNUmber);
         jlblOPDNUmber.setText(lb.getData("opd_no", "ipdreg", "ipd_no", ipdNUmber, 0));
-        setData(ipdNUmber);
+        setData(ipdNUmber, true);
         setPickListView();
         addJtextBox();
         addJlabel();
@@ -189,7 +189,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         }
     }
 
-    private void setData(String ipd_no) {
+    private void setData(String ipd_no, boolean first_time) {
         try {
             jlblIPDNumber.setText(ipd_no);
             String sql = "SELECT SUM(amount) FROM ipdpaymenthd WHERE amount > 0 and ipd_no='" + ipd_no + "' AND ref_no <>'" + ref_no + "'";
@@ -205,7 +205,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
             if (rsLcoal.next()) {
                 jlblRefund.setText(lb.Convert2DecFmtForRs(Math.abs(lb.isNumber(rsLcoal.getString(1)))));
             }
-            sql = "seLECT i.is_medi,i.dis_user_id,i.dis_edit_no,i.dis_time_stamp,i1.sr_no,i1.ref_no,p.opd_no,p.pt_name,CASE WHEN p.sex = 0 THEN 'Male' ELSE 'Female' END AS sex,c.city_name,a.area_name, a1.ac_name,"
+            sql = "seLECT i.service_charge,i.is_medi,i.dis_user_id,i.dis_edit_no,i.dis_time_stamp,i1.sr_no,i1.ref_no,p.opd_no,p.pt_name,CASE WHEN p.sex = 0 THEN 'Male' ELSE 'Female' END AS sex,c.city_name,a.area_name, a1.ac_name,"
                     + " i1.bill_item_cd,i1.qty,i1.rate,i1.amt,i1.doc_cd,i1.disc,i1.final_amt FROM " + tableHD + " i LEFT JOIN ipdbilldt i1 ON i.ipd_no=i1.ipd_no "
                     + " LEFT JOIN patientmst p ON i.opd_no=p.opd_no LEFT JOIN patientinfomst p1 ON p.opd_no=p1.opd_no "
                     + " LEFT JOIN citymst c ON p1.city_cd = c.city_cd  LEFT JOIN areamst a ON p1.area_cd=a.area_cd "
@@ -214,6 +214,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                     + " opd_no in(SELECT opd_no FROM patientmst WHERE ref_opd_no='" + jlblOPDNUmber.getText() + "'))) order by opd_no";
             pstLocal = dataConnection.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rsLcoal = pstLocal.executeQuery();
+            double service_charge = 0.00;
             if (rsLcoal.next()) {
                 jlblOPDNUmber.setText(rsLcoal.getString("opd_no"));
                 jlblName.setText(" " + rsLcoal.getString("pt_name"));
@@ -221,6 +222,9 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                 jlblCity.setText(" " + rsLcoal.getString("city_name"));
                 jlblArea.setText(" " + rsLcoal.getString("area_name"));
                 jlblSex.setText(" " + rsLcoal.getString("Sex"));
+                if (!first_time) {
+                    jlblServiceCharge.setText(lb.Convert2DecFmtForRs(rsLcoal.getDouble("service_charge")));
+                }
 
                 dtm.setRowCount(0);
                 Vector row = new Vector();
@@ -234,6 +238,9 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                 row.add(lb.getAcCode(rsLcoal.getString("doc_cd"), "CA"));
                 row.add(rsLcoal.getString("ref_no"));
                 row.add(rsLcoal.getString("sr_no"));
+                if (lb.getbillitemCode(rsLcoal.getString("bill_item_cd"), "CS").equalsIgnoreCase("1")) {
+                    service_charge += rsLcoal.getDouble("final_amt");
+                }
                 dtm.addRow(row);
                 while (rsLcoal.next()) {
                     row = new Vector();
@@ -247,9 +254,15 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                     row.add(lb.getAcCode(rsLcoal.getString("doc_cd"), "CA"));
                     row.add(rsLcoal.getString("ref_no"));
                     row.add(rsLcoal.getString("sr_no"));
+                    if (lb.getbillitemCode(rsLcoal.getString("bill_item_cd"), "CS").equalsIgnoreCase("1")) {
+                        service_charge += rsLcoal.getDouble("final_amt");
+                    }
                     dtm.addRow(row);
                 }
 
+                if (first_time) {
+                    jlblServiceCharge.setText(lb.Convert2DecFmtForRs(service_charge * 10 / 100));
+                }
                 setTotal();
                 rsLcoal.beforeFirst();
                 rsLcoal.next();
@@ -341,7 +354,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                     pstLocal.executeUpdate();
 
                     sql = "update ipdreg set dis_date=?,disc_amt=?,paid_amt=?,is_close =1,ref_no=?,dis_user_id=?, dis_time_stamp = current_timestamp,"
-                            + "dis_time=?,discharge_type=? ";
+                            + "dis_time=?,discharge_type=?,service_charge=? ";
                     if (getMode().equalsIgnoreCase("E")) {
                         lb.generateLog("ipdreg", "ipdreglg", "ipd_no", jlblIPDNumber.getText());
                         lb.generateLog("ipdpaymenthd", "ipdpaymenthdlg", "ref_no", ref_no);
@@ -360,7 +373,8 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                     date = sdf.parse(time);
                     pstLocal.setString(6, sdf.format(date));
                     pstLocal.setInt(7, jComboBox1.getSelectedIndex());
-                    pstLocal.setString(8, jlblIPDNumber.getText());
+                    pstLocal.setDouble(8, lb.isNumber(jlblServiceCharge));
+                    pstLocal.setString(9, jlblIPDNumber.getText());
                     pstLocal.executeUpdate();
 
                     if (getMode().equalsIgnoreCase("N")) {
@@ -511,6 +525,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                 }
                 lb.setDateChooserPropertyInit(jtxtVdate);
                 jlblTotal.setText("");
+                jlblServiceCharge.setText("");
                 jlblNetAmt.setText("");
                 jtxtDiscount.setText("");
                 jlblRemainingAmt.setText("");
@@ -571,7 +586,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                     pd.jtxtCardAmt.setText(lb.Convert2DecFmtForRs(viewDataRs.getDouble("CARD_AMT")));
                     pd.jtxtCardNo.setText(viewDataRs.getString("card_no"));
                 }
-                setData(viewDataRs.getString("ipd_no"));
+                setData(viewDataRs.getString("ipd_no"), false);
 
             }
 
@@ -779,6 +794,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         jPanel4.setVisible(false);
         lb.setTable(jTable1, new JComponent[]{jtxtItem, jtxtQty, jtxtRate, jtxtAmt, jtxtDiscAmt, jtxtFinalAmt, jtxtRefBy, null, null, null});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblTotal, jLabel9, null, null, null});
+        lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblServiceCharge, jLabel23, null, null, null});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblNetAmt, jLabel10, null, null, null});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblAdvanceAmt, jLabel16, null, null, null});
         lb.setTable(jTable1, new JComponent[]{null, null, null, null, null, jlblRefund, jLabel20, null, null, null});
@@ -809,6 +825,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         for (int i = 0; i < jTable1.getRowCount(); i++) {
             amt += lb.isNumber(jTable1.getValueAt(i, 5).toString());
         }
+        amt += lb.isNumber(jlblServiceCharge.getText());
         jlblNetAmt.setText(lb.Convert2DecFmtForRs(amt));
         jlblTotal.setText(lb.Convert2DecFmtForRs(amt));
         jlblRemainingAmt.setText(lb.Convert2DecFmtForRs(amt - lb.isNumber(jtxtDiscount) - lb.isNumber(jlblAdvanceAmt) + lb.isNumber(jlblRefund)));
@@ -899,6 +916,9 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         jPanel15 = new javax.swing.JPanel();
         jlblRefund = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jlblServiceCharge = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -1553,6 +1573,34 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                 .addGap(0, 4, Short.MAX_VALUE))
         );
 
+        jPanel7.setPreferredSize(new java.awt.Dimension(177, 30));
+
+        jlblServiceCharge.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jlblServiceCharge.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                jlblServiceChargeComponentMoved(evt);
+            }
+        });
+
+        jLabel23.setText("Service Charge");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(jlblServiceCharge, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jlblServiceCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+            .addComponent(jLabel23)
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1567,7 +1615,8 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE))
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1585,9 +1634,11 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1991,6 +2042,10 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
         setTable();
     }//GEN-LAST:event_jlblTotalComponentMoved
 
+    private void jlblServiceChargeComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jlblServiceChargeComponentMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlblServiceChargeComponentMoved
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -2010,6 +2065,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -2029,6 +2085,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelNavigation;
     private javax.swing.JScrollPane jScrollPane1;
@@ -2049,6 +2106,7 @@ public class IPDBillGenerationDischarge extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlblRefBy;
     private javax.swing.JLabel jlblRefund;
     private javax.swing.JLabel jlblRemainingAmt;
+    private javax.swing.JLabel jlblServiceCharge;
     private javax.swing.JLabel jlblSex;
     private javax.swing.JLabel jlblTotal;
     private javax.swing.JLabel jlblUserName;

@@ -80,7 +80,7 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
             generateOPDBill(ref_no, type, -1);
         } else if (tag.equalsIgnoreCase("VCC")) {
             generateVaccine(ref_no, type, -1);
-        } else if (tag.equalsIgnoreCase("Advanced") || tag.equalsIgnoreCase("Refund")) {
+        } else if (tag.equalsIgnoreCase("Advance") || tag.equalsIgnoreCase("Refund")) {
             generateAdvanced(ref_no, tag, -1);
         } else if (tag.equalsIgnoreCase("Late Payment")) {
             generateLatePayment(ref_no, type, -1);
@@ -111,14 +111,21 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
         }
     }
 
-    private void generateLabel(String opd_no, int mode) {
+    private void generateLabel(String ipd_no, int mode) {
         try {
+            String opd_no = lb.getData("opd_no", "ipdreg", "ipd_no", ipd_no, 0);
             String name = lb.getData("pt_name", "patientmst", "opd_no", opd_no, 0);
             String sex = lb.getData("sex", "patientmst", "opd_no", opd_no, 0);
             String age = lb.getData("dob", "patientmst", "opd_no", opd_no, 0);
+            String room_cd = lb.getData("room_cd", "ipdreg", "ipd_no", ipd_no, 0);
+            String doc_cd = lb.getAcCode(lb.getData("doc_cd", "ipdreg", "ipd_no", ipd_no, 0), "N");
             age = lb.getDateDifferenceInDDMMYYYY(lb.dbFormat.parse(age), Calendar.getInstance().getTime());
+            String admit_date = lb.ConvertDateFormetForDisply(lb.getData("admit_date", "ipdreg", "ipd_no", ipd_no, 0));
 
-            String sql = "SELECT '" + name + "' AS  pt_name,case when " + sex + "=0 then 'Male' else 'Female' end AS sex,'" + age + "' as age FROM patientmst p LIMIT 0,30";
+            String sql = "SELECT '" + name + "' AS  pt_name,case when " + sex + "=0 then 'Male' else 'Female' end AS sex,"
+                    + "'" + age + "' as age,'" + admit_date + "' as admit_date,'" + ipd_no + "' as ipd_no,'" + opd_no + "' as opd_no,"
+                    + "'" + room_cd + "' as room_cd, '" + doc_cd + "' as doc_cd "
+                    + " FROM patientmst p LIMIT 0,30";
             PreparedStatement pstLocal = dataConnecrtion.prepareStatement(sql);
             ResultSet rsLocal = pstLocal.executeQuery();
             if (mode == -1) {
@@ -268,6 +275,7 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
             params.put("dir1", HMS101.currentDirectory);
             params.put("advance", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount > 0 and ipd_no", ref_no, 0)));
             params.put("refund", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount < 0 and ipd_no", ref_no, 0)));
+            params.put("service_charge", lb.isNumber(lb.getData("service_charge", "ipdreg", "ipd_no", ref_no, 0)));
             if (mode == -1) {
                 print = lb.reportGenerator("IPDBill.jasper", params, rsLocal, jPanel1);
             } else {
@@ -305,6 +313,7 @@ public class VoucherDisplay extends javax.swing.JInternalFrame {
             params.put("dir1", HMS101.currentDirectory);
             params.put("advance", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount > 0 and ipd_no", ref_no, 0)));
             params.put("refund", lb.isNumber(lb.getData("sum(amount)", "ipdpaymenthd", "ref_no like'AR%' and amount < 0 and ipd_no", ref_no, 0)));
+            params.put("service_charge", lb.isNumber(lb.getData("service_charge", "ipdreg", "ipd_no", ref_no, 0)));
             if (mode == -1) {
                 print = lb.reportGenerator("IPDIntrim.jasper", params, rsLocal, jPanel1);
             } else {

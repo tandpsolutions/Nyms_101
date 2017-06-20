@@ -488,7 +488,7 @@ public class PatientInfo extends javax.swing.JDialog {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        VoucherDisplay vd = new VoucherDisplay(jlblOPDNUmber.getText(), "Label");
+        VoucherDisplay vd = new VoucherDisplay(jlblIPDNumber.getText(), "Label");
         addOnScreen(vd, "Label Printing", -1);
     }//GEN-LAST:event_jButton3ActionPerformed
 
