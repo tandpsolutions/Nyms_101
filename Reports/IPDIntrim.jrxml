@@ -12,6 +12,7 @@
 	<parameter name="result" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
 	<parameter name="dir" class="java.lang.String"/>
 	<parameter name="refund" class="java.lang.Double"/>
+	<parameter name="service_charge" class="java.lang.Double"/>
 	<queryString>
 		<![CDATA[SELECT i.ref_no,i.dis_date,i.ipd_no,i.opd_no,p.pt_name,p.sex,DATEDIFF(CURDATE(),p.dob) / 365 AS age,p1.address,b.bill_item_name,
 SUM(i1.qty) AS qty,i1.rate AS rate,SUM(i1.amt) AS amt,
@@ -425,6 +426,9 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 		<band height="62">
 			<subreport>
 				<reportElement uuid="e818ff2a-a870-4169-acf1-abee3b600907" x="-20" y="-20" width="544" height="62"/>
+				<subreportParameter name="service_charge">
+					<subreportParameterExpression><![CDATA[$P{service_charge}]]></subreportParameterExpression>
+				</subreportParameter>
 				<subreportParameter name="refund">
 					<subreportParameterExpression><![CDATA[$P{refund}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -437,11 +441,11 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<subreportParameter name="advance">
 					<subreportParameterExpression><![CDATA[$P{advance}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="paid_amt">
-					<subreportParameterExpression><![CDATA[$F{paid_amt}]]></subreportParameterExpression>
-				</subreportParameter>
 				<subreportParameter name="discount">
 					<subreportParameterExpression><![CDATA[$F{disc_amt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="paid_amt">
+					<subreportParameterExpression><![CDATA[$F{paid_amt}]]></subreportParameterExpression>
 				</subreportParameter>
 				<dataSourceExpression><![CDATA[$P{result}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{dir} + "IPDSub.jasper"]]></subreportExpression>

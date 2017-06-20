@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LabelPrint" columnCount="5" printOrder="Horizontal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="111" leftMargin="20" rightMargin="20" topMargin="39" bottomMargin="20" uuid="36fc2fa8-68c1-4331-aef6-8e311f7bd2ea">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LabelPrint" columnCount="3" printOrder="Horizontal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="189" columnSpacing="14" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="36fc2fa8-68c1-4331-aef6-8e311f7bd2ea">
 	<property name="ireport.zoom" value="1.4641000000000008"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -13,39 +13,58 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="age" class="java.lang.String"/>
+	<field name="ipd_no" class="java.lang.String"/>
+	<field name="opd_no" class="java.lang.String"/>
+	<field name="admit_date" class="java.lang.String"/>
+	<field name="room_cd" class="java.lang.String"/>
+	<field name="doc_cd" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="60" splitType="Stretch">
+		<band height="84" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
-				<reportElement uuid="4a8095a8-7c94-4708-82f4-086d4088dec4" stretchType="RelativeToTallestObject" x="10" y="0" width="111" height="10"/>
+				<reportElement uuid="4a8095a8-7c94-4708-82f4-086d4088dec4" stretchType="RelativeToTallestObject" x="11" y="13" width="169" height="10"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{pt_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement uuid="67bc1f7d-5ff5-41a7-948e-12f9dddeb43d" stretchType="RelativeToTallestObject" x="10" y="23" width="100" height="10"/>
+				<reportElement uuid="67bc1f7d-5ff5-41a7-948e-12f9dddeb43d" stretchType="RelativeToTallestObject" x="11" y="23" width="128" height="10"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{sex}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["IPD No "+$F{ipd_no}+" / "+$F{opd_no}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement uuid="1f1b2220-9f5d-466b-b962-d87108093201" stretchType="RelativeToTallestObject" x="10" y="34" width="100" height="10"/>
+				<reportElement uuid="67bc1f7d-5ff5-41a7-948e-12f9dddeb43d" stretchType="RelativeToTallestObject" x="11" y="33" width="128" height="10"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Sex/Age "+$F{sex}+" / "+$F{age}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement uuid="04f1197c-a932-464a-b867-5f28809a5ad2" stretchType="RelativeToTallestObject" x="10" y="44" width="100" height="10"/>
-				<textElement markup="none">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="67bc1f7d-5ff5-41a7-948e-12f9dddeb43d" stretchType="RelativeToTallestObject" x="11" y="43" width="128" height="10"/>
+				<textElement>
 					<font size="7"/>
 				</textElement>
-				<text><![CDATA[Apple Hospital]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA["Admit Date "+$F{admit_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="67bc1f7d-5ff5-41a7-948e-12f9dddeb43d" stretchType="RelativeToTallestObject" x="11" y="53" width="128" height="10"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Room No "+$F{room_cd}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="67bc1f7d-5ff5-41a7-948e-12f9dddeb43d" stretchType="RelativeToTallestObject" x="11" y="63" width="128" height="10"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Doctor "+$F{doc_cd}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
