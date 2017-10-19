@@ -388,9 +388,7 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                     jtxtAcAlias.setText(viewData.getString("opd_no"));
                     jtxtPatientName.setText(viewData.getString("pt_name"));
                     jtxtDob.setText(lb.ConvertDateFormetForDisply(viewData.getString("dob")));
-                    jtxtDays.setText(lb.getYearMonthDays(jtxtDob.getText(), 0) + "");
-                    jtxtMonth.setText(lb.getYearMonthDays(jtxtDob.getText(), 1) + "");
-                    jtxtYear.setText(lb.getYearMonthDays(jtxtDob.getText(), 2) + "");
+                    
                     jcmbSex.setSelectedIndex(viewData.getInt("sex"));
                     jcmbStatus.setSelectedIndex(viewData.getInt("status"));
                     jcmbBlood.setSelectedIndex(viewData.getInt("blood_group"));
@@ -410,6 +408,9 @@ public class PatientMaster extends javax.swing.JInternalFrame {
                     jlblEditNo.setText(viewData.getString("edit_no"));
                     jlblLstUpdate.setText(viewData.getString("time_stamp"));
                     jlblUserName.setText(lb.getUserName(viewData.getString("user_id"), "N"));
+                    jtxtDays.setText(lb.getYearMonthDays(jtxtDob.getText(), 0) + "");
+                    jtxtMonth.setText(lb.getYearMonthDays(jtxtDob.getText(), 1) + "");
+                    jtxtYear.setText(lb.getYearMonthDays(jtxtDob.getText(), 2) + "");
 
                 } catch (Exception ex) {
                     lb.printToLogFile("Exception at setComponentTextFromResultSet", ex);
