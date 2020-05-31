@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OPDBill" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="b27a7218-63dc-4c48-9c4e-9ee498e35dba">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="162"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="words" class="java.lang.String"/>
 	<parameter name="type" class="java.lang.String"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
@@ -298,7 +298,7 @@ SUM(i1.disc) AS disc,SUM(i1.final_amt) AS final_amt,a.ac_name,i.admit_date,b1.bi
 				<textElement verticalAlignment="Bottom">
 					<font fontName="Lucida Sans Typewriter" size="12" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[(($F{sex} == 0)?"Male" : "Female")+" / "+($F{age}+"").subSequence(0,($F{age}+"").indexOf("."))+" Years "+((($F{age}-$F{age1})*365)+"").subSequence(0,((($F{age}-$F{age1})*365)+"").indexOf("."))+ " Days"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(($F{sex} == 0)?"Male" : "Female")+" / "+($F{age}+"").subSequence(0,($F{age}+"").indexOf("."))+" Years "+((($F{age}-$F{age1})*365/30)+"").subSequence(0,((($F{age}-$F{age1})*365/30)+"").indexOf("."))+ " Months "+((($F{age}-$F{age1})*365)+"").subSequence(0,((($F{age}-$F{age1})*365)+"").indexOf("."))+ " Days"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="e5580b8c-d7be-4032-ad90-285a82f1ac16" x="126" y="165" width="429" height="15"/>
